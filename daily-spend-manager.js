@@ -1,7 +1,7 @@
 function simpleCalculation()
 {
    console.log("Simple Calculation");
-   let balance = parseInt(document.getElementById("balance").value);
+   let balance = parseInt(document.getElementById("simpleBudget").value);
    console.log("Balance Entered "+balance);
    const today = new Date();
    console.log("Today is" + today.getDate());
