@@ -4,29 +4,25 @@ function simpleCalculation()
    let balance = parseInt(document.getElementById("simpleBudget").value);
    console.log("Balance Entered "+balance);
    const today = new Date();
-   console.log("Today is" + today.getDate());
    let selectedDate = document.getElementById("simpleEndDate").value;
    const endDay = new Date(selectedDate);
-   console.log("End Day is"+endDay.getDate());
+  
 
-   //Temporary Functon to see if I can take away one date from the other and get the days 
-   const diff = endDay - today;
-   console.log("Difference = "+diff);
-   let daysDifference = diff / (1000 * 3600 * 24);
-   console.log("Difference in Days = "+daysDifference);
-               
-   let budgetDays = endDay.getDate() - today.getDate();
-   console.log("Days count is "+budgetDays);
+   
+   const daysBetweenMilli = endDay - today;
+   let daysBetween = daysBetweenMilli / (1000 * 3600 * 24);
+   console.log("Difference in Days = "+daysBetween);
+                  
    let dailyLimit = 0;
     
-    if (daysDifference > 0)
+    if (daysBetween > 0)
     {
-        dailyLimit = (balance / daysDifference).toFixed(2);
+        dailyLimit = (balance / daysBetween).toFixed(2);
         console.log("Daily Cash Limit £"+ dailyLimit);
     }
    else
     {
-       console.log("Date Calculation Went Wrong");
+       console.log("Calculation Went Wrong");
     }
 }
 
