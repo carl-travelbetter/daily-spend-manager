@@ -22,6 +22,7 @@ function simpleCalculation()
         dailyLimit = (balance / daysBetween).toFixed(2);
         console.log("Daily Cash Limit £"+ dailyLimit);
         const resultsArea = document.getElementById("results");
+        result.innerHTML = "";
         const dailyLimitResults = document.createElement("p");
         dailyLimitResults.textContent = "Your Daily Spend Limit Is £"+dailyLimit;
         resultsArea.append(dailyLimitResults);
