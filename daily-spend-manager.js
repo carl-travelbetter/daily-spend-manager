@@ -14,7 +14,7 @@ function simpleCalculation()
     
     if (budgetDays > 0)
     {
-        dailyLimit = (moneyleft / budgetDays).toFixed(2);
+        dailyLimit = (balance / budgetDays).toFixed(2);
         console.log("Daily Cash Limit £"+ dailyLimit);
     }
    else
