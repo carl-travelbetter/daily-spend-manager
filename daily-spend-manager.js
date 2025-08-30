@@ -12,7 +12,9 @@ function simpleCalculation()
    //Temporary Functon to see if I can take away one date from the other and get the days 
    const diff = endDay - today;
    console.log("Difference = "+diff);
-   
+   let daysDifference = diff / (1000 * 3600 * 24);
+   console.log("Difference in Days = "+daysDifference);
+               
    let budgetDays = endDay.getDate() - today.getDate();
    console.log("Days count is "+budgetDays);
    let dailyLimit = 0;
