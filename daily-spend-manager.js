@@ -9,12 +9,12 @@ function simpleCalculation()
    const endDay = new Date(selectedDate);
    console.log("End Day is"+endDay.getDate());
    let budgetDays = endDay.getDate() - today.getDate();
-   console.log("Days count is "+days);
+   console.log("Days count is "+budgetDays);
    let dailyLimit = 0;
     
     if (days > 0)
     {
-        dailyLimit = (moneyleft / days).toFixed(2);
+        dailyLimit = (moneyleft / budgetDays).toFixed(2);
         console.log("Daily Cash Limit £"+ dailyLimit);
     }
    else
