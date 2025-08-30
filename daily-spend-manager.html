@@ -19,9 +19,9 @@
     <input class="balance" type="number" id="simpleBudget" placeholder="1000" /><br>
     <p>Select Target Date</p>
     <input type="date" id="simpleEndDate" /><br>
-    <button onClick="simpleCalculation()">Calculate Daily Cash</button>
+    <button class="calcButton" onClick="simpleCalculation()">Calculate Daily Cash</button>
   
-    <button onClick="loadAdvanceTool()">Advance Tool</button>
+    <button class="calcButton" onClick="loadAdvanceTool()">Advance Tool</button>
   </section>
   <section id="advancedapp" hidden>
     <h2>Advance Daily Spend Manager</h2>
@@ -30,7 +30,8 @@
     <p>Select Date Range</p>
     <input type="date" id="advanceStartDate" /><br>
     <input type="date" id="advanceEndDate" /><br>
-    <button onClick="advancedCalculation()">Calculate Daily Cash</button>
+    <button class="calcButton" onClick="advancedCalculation()">Calculate Daily Cash</button>
+    <button class="calcButton" onClick="loadSimpleTool()">Simple Tool</button>
   </section>
 </body>
 </html>
