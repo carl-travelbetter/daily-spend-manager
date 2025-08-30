@@ -21,6 +21,10 @@ function simpleCalculation()
         //Set the new daily limit to total balance / number of days
         dailyLimit = (balance / daysBetween).toFixed(2);
         console.log("Daily Cash Limit £"+ dailyLimit);
+        const resultsArea = document.getElementById("results");
+        const dailyLimitResults = document.createElement("p");
+        dailyLimitResults.textContent = "Daily Limit = "+dailyLimit);
+        resultsArea.append(dailyLimitResults);
     }
    else
     {
