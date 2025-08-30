@@ -1,1 +1,22 @@
+body {
+  color:#46474b;  
+  font-family: sans-serif;
+  font-size:16px;  
+  box-sizing: border-box;
+}
+
+h1 {
+  color:#0170b9;
+  font-size: 1.75em;
+}
+
+h2 {
+    color:#0170b9;
+    margin-top: 1.5rem;
+}
+
+h3, h4, h5 {
+    color:#0170b9;
+    margin-top: 1.25rem;
+}
 
