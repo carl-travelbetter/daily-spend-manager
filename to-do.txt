@@ -1,6 +1,3 @@
-Create CSS File
-Create Daily Spend Manager JS
-Outline Functionality
-Build Submit Elements
-Build Calendar Button
-Console Check Maths and Handling Calendar
+Add introduction
+Add explainer text in simple results
+Travel money management theme?
