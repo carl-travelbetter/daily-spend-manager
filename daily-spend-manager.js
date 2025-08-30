@@ -8,6 +8,11 @@ function simpleCalculation()
    let selectedDate = document.getElementById("simpleEndDate").value;
    const endDay = new Date(selectedDate);
    console.log("End Day is"+endDay.getDate());
+
+   //Temporary Functon to see if I can take away one date from the other and get the days 
+   const diff = endDay - today;
+   console.log("Difference = "+diff);
+   
    let budgetDays = endDay.getDate() - today.getDate();
    console.log("Days count is "+budgetDays);
    let dailyLimit = 0;
