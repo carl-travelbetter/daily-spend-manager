@@ -23,7 +23,7 @@ function simpleCalculation()
         console.log("Daily Cash Limit £"+ dailyLimit);
         const resultsArea = document.getElementById("results");
         const dailyLimitResults = document.createElement("p");
-        dailyLimitResults.textContent = "Daily Limit = "+dailyLimit);
+        dailyLimitResults.textContent = "Your Daily Spend Limit Is £"+dailyLimit;
         resultsArea.append(dailyLimitResults);
     }
    else
