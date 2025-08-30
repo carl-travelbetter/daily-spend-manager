@@ -16,6 +16,7 @@ function simpleCalculation()
     {
         dailyLimit = (moneyleft / days).toFixed(2);
         console.log("Daily Cash Limit £"+ dailyLimit);
+    }
    else
     {
        console.log("Date Calculation Went Wrong");
