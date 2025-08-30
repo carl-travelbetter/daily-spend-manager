@@ -37,5 +37,29 @@ h3, h4, h5 {
   background-color: #0066cc;
 }
 
+.resultCard {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;  
+  background-color: #c6cef7; /* optional: or keep your current color */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  box-sizing: border-box;  
+  text-align: left;
+  width: 80%vw;
+  max-width:600px;
+  padding:10px;
+}
+
+.resultCard:hover {
+  transform: translateY(-3px);
+}
+
+.resultCard h3 {
+  margin-top: 0;
+  color: #0170b9;
+}
+
 
 
