@@ -11,14 +11,26 @@
 <body>
   <section id="introduction">
     <h1>Daily Spend Manager</h1>
+    
   </section>
   <section id="simpleapp">
   <h2>Simple Daily Spend Manager</h2>
-  <button>Submit</button>
-    <button>Advance Tool</button>
+    <p>Enter balance/budget £</p>
+    <input class="balance" type="number" id="simpleBudget" placeholder="1000" /><br>
+    <p>Select Target Date</p>
+    <input type="date" id="simpleEndDate" /><br>
+    <button onClick="simpleCalculation()">Calculate Daily Cash</button>
+  
+    <button onClick="loadAdvanceTool()">Advance Tool</button>
   </section>
   <section id="advancedapp" hidden>
     <h2>Advance Daily Spend Manager</h2>
+    <p>Enter balance/budget £</p>
+    <input class="balance" type="number" id="advanceBudget" placeholder="1000" /><br>
+    <p>Select Date Range</p>
+    <input type="date" id="advanceStartDate" /><br>
+    <input type="date" id="advanceEndDate" /><br>
+    <button onClick="advancedCalculation()">Calculate Daily Cash</button>
   </section>
 </body>
 </html>
