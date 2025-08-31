@@ -2,4 +2,8 @@ Add introduction
 Add explainer text in simple results
 Travel money management theme?
 Simple - add a grid to input spend items 
+Simple - add a total spend
+simple - adjust and show the updated working balance
+simple - go red if overspent
+simple - find a way to select and input the expense without having to delete 0.00
 Simple - add a print option
