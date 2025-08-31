@@ -1,6 +1,7 @@
 let workingBalance = 0;
 let dailyBudget = 0;
 let expenses = [];
+let totalSpend = 0;
 
 function simpleCalculation()
 {
@@ -71,14 +72,24 @@ function loadAdvanceTool()
 function updateBalance()
 {
    console.log("Update Balance");
+   //Reset the working balance
+   workingBalance = dailyBudget;
+   expenses.forEach(expense => {
+      totalSend = totalSpend + expense;
+      console.log("Running Total £"+totalSpend;
+   });
+   workingBalance = workingBalance - totalSpend;
+   const workingBalanceReporting = document.getElementById("working-balance");
+   const currentBalance = document.createElement("p");
+   currentBalance.textContent = "Daily Budget Balance Remaining £"+workingBalance;
+   workingBalanceReporting.append(currentBalance);
 }
 
 //Function to capture each expense entered - will call the update balance function
 function captureExpense()
 {
    console.log("Capture Expense");
-   //Reset the working balance
-   workingBalance = dailyBudget;
+  
    
    //Capture the expense listed and stored in the array of expenses (just value for now)
    let expense = parseFloat(document.getElementById("expense").value);
