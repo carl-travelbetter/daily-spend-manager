@@ -35,7 +35,13 @@
   <section id="resultsSection">
     <div id="results">
     </div>
-    <div class="expense-grid" id="expenses-grid" hidden>
+    <div class="expense-capture" id="expenses-capture" hidden>
+      <div id="capture-expense">
+        <input class="item-description" id="item-description" type="text" placeholder="Enter spend details (optional)" />
+        £<input class="expense" id="expense" type="number" value="0.00" />
+        <button class="calcButton" onClick="updateBalance()">Submit</button>
+      </div>
+      <!--Commented out the table while I try a dynamic expense tool to create an expense object
       <table>
         <tr></tr><th>Item</th><th>Amount</th></tr>
         <tr>
@@ -66,11 +72,11 @@
           <td><input class="item-description" id="item-description-7" type="text" /></td>
           <td>£<input class="expense" id="expense-7" type="number" value="0.00" /></td>
         </tr>
-      </table>
+      </table> -->
       <div id="working-balance"></div>
-      <button class="calcButton" onClick="updateBalance()">Update Balance</button>
-      <button class="calcButton" onClick="clearExpenseGrid()">Clear Table</button>
-      <button class="calcButton" onClick="printExpenseGrid()">Print Expense Grid</button>
+      
+      <!--<button class="calcButton" onClick="clearExpenseGrid()">Clear Table</button>
+      <button class="calcButton" onClick="printExpenseGrid()">Print Expense Grid</button> -->
     </div>
   </section>
 </body>
