@@ -62,3 +62,13 @@ function updateBalance()
 {
    console.log("Update Balance");
 }
+
+function clearExpenseGrid()
+{
+   console.log("Clear Expense Grid");
+}
+
+function printExpenseGrid()
+{
+   console.log("Print Expense Grid");
+}
