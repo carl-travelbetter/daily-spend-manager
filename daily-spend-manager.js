@@ -76,7 +76,7 @@ function updateBalance()
    workingBalance = dailyBudget;
    expenses.forEach(expense => {
       totalSend = totalSpend + expense;
-      console.log("Running Total £"+totalSpend;
+      console.log("Running Total £"+totalSpend);
    });
    workingBalance = workingBalance - totalSpend;
    const workingBalanceReporting = document.getElementById("working-balance");
