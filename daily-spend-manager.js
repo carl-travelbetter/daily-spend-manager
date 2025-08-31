@@ -75,6 +75,7 @@ function updateBalance()
    //Reset the working balance
    workingBalance = dailyBudget;
    expenses.forEach(expense => {
+      console.log("Expense "+expense);
       totalSend = totalSpend + expense.value;
       console.log("Running Total £"+totalSpend);
    });
