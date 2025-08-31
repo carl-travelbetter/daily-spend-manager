@@ -35,7 +35,7 @@
   <section id="resultsSection">
     <div id="results">
     </div>
-    <div id="expenses-grid" hidden>
+    <div class="expense-grid" id="expenses-grid" hidden>
       <table>
         <tr></tr><th>Item</th><th>Amount</th></tr>
         <tr>
@@ -48,6 +48,8 @@
         </tr>
       </table>
       <button class="calcButton" onClick="updateBalance()">Update Balance</button>
+      <button class="calcButton" onClick="clearExpenseGrid()">Clear Table</button>
+      <button class="calcButton" onClick="printExpenseGrid()">Print Expense Grid</button>
     </div>
   </section>
 </body>
