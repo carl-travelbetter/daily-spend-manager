@@ -1,5 +1,6 @@
 let workingBalance = 0;
 let dailyBudget = 0;
+let expenses = [];
 
 function simpleCalculation()
 {
@@ -72,6 +73,14 @@ function updateBalance()
    console.log("Update Balance");
    //Reset the working balance
    workingBalance = dailyBudget;
+   
+   //Capture the expense listed and stored in the array of expenses (just value for now)
+   let expense = parseFloat(document.getElementByd("expense").value);
+   console.log("Expense Captured £"+expense);
+   expenses.add(expense);
+   console.log("Number of expenses captured "+expenses.length);
+   
+   
    //Grab all the entries - Temp commented out 
    /*
    let expense1 = parseFloat(document.getElementById("expense-1").value);
