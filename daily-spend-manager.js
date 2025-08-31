@@ -104,6 +104,7 @@ function captureExpense()
    {
       expenses.push(expense);
       console.log("Number of expenses captured "+expenses.length);
+      document.getElementById("expense").innerHTML = "";
       updateBalance();
    }
    
