@@ -80,6 +80,7 @@ function updateBalance()
    });
    workingBalance = workingBalance - totalSpend;
    const workingBalanceReporting = document.getElementById("working-balance");
+   workingBalanceReporting.innerHTML = "";
    const currentBalance = document.createElement("p");
    currentBalance.textContent = "Daily Budget Balance Remaining £"+workingBalance;
    workingBalanceReporting.append(currentBalance);
