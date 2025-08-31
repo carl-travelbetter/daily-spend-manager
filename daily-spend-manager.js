@@ -1,3 +1,5 @@
+let workingBalance = 0;
+
 function simpleCalculation()
 {
    console.log("Simple Calculation");
@@ -27,6 +29,8 @@ function simpleCalculation()
         const dailyLimitResults = document.createElement("p");
         dailyLimitResults.textContent = "Your Daily Spend Limit Is £"+dailyLimit;
         resultsArea.append(dailyLimitResults);
+        //Set the working balance to the be the calculated daily limit allowed
+        workingBalance = dailyLimit;
         document.getElementById("expenses-grid").hidden = false;
     }
    else
@@ -52,4 +56,9 @@ function loadAdvanceTool()
   console.log("Load Advanced Tool");
    document.getElementById("advancedapp").hidden = false;
    document.getElementById("simpleapp").hidden = true;
+}
+
+function updateBalance()
+{
+   console.log("Update Balance");
 }
