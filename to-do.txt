@@ -6,4 +6,5 @@ Simple - add a total spend
 simple - adjust and show the updated working balance
 simple - go red if overspent
 simple - find a way to select and input the expense without having to delete 0.00
+simple - consider and proto type one input that updates an array of spend items, either then show in a grid or not
 Simple - add a print option
