@@ -73,15 +73,15 @@ function updateBalance()
    //Reset the working balance
    workingBalance = dailyBudget;
    //Grab all the entries
-   let expense1 = document.getElementById("expense-1").value;
+   let expense1 = 0+document.getElementById("expense-1").value;
    console.log("Expense 1 = "+expense1);
-   let expense2 = document.getElementById("expense-2").value;
+   let expense2 = 0+document.getElementById("expense-2").value;
    console.log("Expense 2 = "+expense2);
-   let expense3 = document.getElementById("expense-3").value;
+   let expense3 = 0+document.getElementById("expense-3").value;
    console.log("Expense 3 = "+expense3);
-   let expense4 = document.getElementById("expense-4").value;
+   let expense4 = 0+document.getElementById("expense-4").value;
    console.log("Expense 4 = "+expense4);
-   let totalSpend = expense1 + expense2 + expense3 + expense4;
+   let totalSpend = 0+expense1 + expense2 + expense3 + expense4;
    console.log("Total Spend = £"+totalSpend);
    
 }
