@@ -72,7 +72,8 @@ function updateBalance()
    console.log("Update Balance");
    //Reset the working balance
    workingBalance = dailyBudget;
-   //Grab all the entries
+   //Grab all the entries - Temp commented out 
+   /*
    let expense1 = parseFloat(document.getElementById("expense-1").value);
    console.log("Expense 1 = "+expense1);
    let expense2 = parseFloat(document.getElementById("expense-2").value);
@@ -82,7 +83,7 @@ function updateBalance()
    let expense4 = parseFloat(document.getElementById("expense-4").value);
    console.log("Expense 4 = "+expense4);
    let totalSpend = expense1 + expense2 + expense3 + expense4;
-   console.log("Total Spend = £"+totalSpend);
+   console.log("Total Spend = £"+totalSpend);*/
    
 }
 
