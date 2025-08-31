@@ -71,15 +71,29 @@ function loadAdvanceTool()
 function updateBalance()
 {
    console.log("Update Balance");
+}
+
+//Function to capture each expense entered - will call the update balance function
+function captureExpense()
+{
+   console.log("Capture Expense");
    //Reset the working balance
    workingBalance = dailyBudget;
    
    //Capture the expense listed and stored in the array of expenses (just value for now)
    let expense = parseFloat(document.getElementById("expense").value);
    console.log("Expense Captured £"+expense);
-   expenses.push(expense);
-   console.log("Number of expenses captured "+expenses.length);
-   
+   if (isNaN(expense))
+   {
+      console.log("Invalid Value Entered");
+      return;
+   }
+   else
+   {
+      expenses.push(expense);
+      console.log("Number of expenses captured "+expenses.length);
+      updateBalance();
+   }
    
    //Grab all the entries - Temp commented out 
    /*
