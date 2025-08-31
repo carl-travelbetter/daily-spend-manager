@@ -72,7 +72,7 @@ h3, h4, h5 {
     max-width:600px;
 }
 
-.expense-grid {
+.expense-capture {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0.75rem;
@@ -87,11 +87,11 @@ h3, h4, h5 {
   padding:10px;
 }
 
-.expense-grid:hover {
+.expense-capture:hover {
   transform: translateY(-3px);
 }
 
-.expense-grid h3 {
+.expense-capture h3 {
   margin-top: 0;
   color: #0170b9;
 }
