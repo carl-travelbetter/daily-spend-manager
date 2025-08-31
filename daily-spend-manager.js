@@ -77,7 +77,7 @@ function updateBalance()
    //Capture the expense listed and stored in the array of expenses (just value for now)
    let expense = parseFloat(document.getElementById("expense").value);
    console.log("Expense Captured £"+expense);
-   expenses.add(expense);
+   expenses.push(expense);
    console.log("Number of expenses captured "+expenses.length);
    
    
