@@ -1,3 +1,5 @@
 Add introduction
 Add explainer text in simple results
 Travel money management theme?
+Simple - add a grid to input spend items 
+Simple - add a print option
