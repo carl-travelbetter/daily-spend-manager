@@ -74,6 +74,8 @@ function updateBalance()
    console.log("Update Balance");
    //Reset the working balance
    workingBalance = dailyBudget;
+   //reset the total spend to zero
+   totalSpend = 0;
    expenses.forEach(expense => {
       console.log("Expense "+expense);
       totalSpend = totalSpend+expense;
