@@ -72,5 +72,29 @@ h3, h4, h5 {
     max-width:600px;
 }
 
+.expense-grid {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;  
+  background-color: #0c69f5; 
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  box-sizing: border-box;  
+  text-align: left;
+  width: 80%vw;
+  max-width:600px;
+  padding:10px;
+}
+
+.expense-grid:hover {
+  transform: translateY(-3px);
+}
+
+.expense-grid h3 {
+  margin-top: 0;
+  color: #0170b9;
+}
+
 
 
