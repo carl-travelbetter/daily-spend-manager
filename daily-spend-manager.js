@@ -35,7 +35,7 @@ function simpleCalculation()
         workingBalance = dailyLimit;
         //Set the global daily spend limit
         dailyBudget = dailyLimit;
-        document.getElementById("expenses-grid").hidden = false;
+        document.getElementById("expense-capture").hidden = false;
         const workingBalanceContainer = document.getElementById("working-balance");
         const workingBalanceMessage = document.createElement("p");
         workingBalanceMessage.textContent = "Current Balance = £"+workingBalance;
