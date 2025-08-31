@@ -75,7 +75,7 @@ function updateBalance()
    workingBalance = dailyBudget;
    
    //Capture the expense listed and stored in the array of expenses (just value for now)
-   let expense = parseFloat(document.getElementByd("expense").value);
+   let expense = parseFloat(document.getElementById("expense").value);
    console.log("Expense Captured £"+expense);
    expenses.add(expense);
    console.log("Number of expenses captured "+expenses.length);
