@@ -1,10 +1,10 @@
 Add introduction
 Add explainer text in simple results
 Travel money management theme?
-Simple - add a grid to input spend items 
-Simple - add a total spend
-simple - adjust and show the updated working balance
+
+
+
 simple - go red if overspent
-simple - find a way to select and input the expense without having to delete 0.00
-simple - consider and proto type one input that updates an array of spend items, either then show in a grid or not
+simple - extend the expenses object to include a description or default to " " if not entered and extend updateCalculation to use both elements of the expense
+simple - create an output grid of expenses so far under the balance calculations in a new results card
 Simple - add a print option
