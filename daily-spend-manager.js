@@ -27,6 +27,7 @@ function simpleCalculation()
         const dailyLimitResults = document.createElement("p");
         dailyLimitResults.textContent = "Your Daily Spend Limit Is £"+dailyLimit;
         resultsArea.append(dailyLimitResults);
+        document.getElementById("expenses-grid").hidden = false;
     }
    else
     {
