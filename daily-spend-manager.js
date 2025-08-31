@@ -62,6 +62,8 @@ function loadAdvanceTool()
    document.getElementById("simpleapp").hidden = true;
 }
 
+//Take all the entries in the table, add them up and then take them away from the working balance or daily limit
+//Show a total spend value as well (total of all elements)
 function updateBalance()
 {
    console.log("Update Balance");
