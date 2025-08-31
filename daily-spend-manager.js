@@ -32,6 +32,10 @@ function simpleCalculation()
         //Set the working balance to the be the calculated daily limit allowed
         workingBalance = dailyLimit;
         document.getElementById("expenses-grid").hidden = false;
+        const workingBalanceContainer = document.getElementById("working-balance");
+        const workingBalanceMessage = document.createElement("p");
+        workingBalanceMessage.textContent = "Current Balance = £"+workingBalance;
+        workingBalanceContainer.append(workingBalanceMessage);
     }
    else
     {
@@ -61,6 +65,7 @@ function loadAdvanceTool()
 function updateBalance()
 {
    console.log("Update Balance");
+   
 }
 
 function clearExpenseGrid()
