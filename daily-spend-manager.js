@@ -85,7 +85,18 @@ function updateBalance()
    const workingBalanceReporting = document.getElementById("working-balance");
    workingBalanceReporting.innerHTML = "";
    const currentBalance = document.createElement("p");
-   currentBalance.textContent = "Daily Budget Balance Remaining £"+workingBalance.toFixed(2);
+   //If the working balance has gone under 0 then set the colour to red to indicate overspent
+   if (workingBalance < 0)
+   {
+      currentBalance.textContent = "Daily Budget Balance Remaining £"+workingBalance.toFixed(2);
+      currentBalance.className = "overspent";
+   }
+   else
+   {
+      currentBalance.textContent = "Daily Budget Balance Remaining £"+workingBalance.toFixed(2);
+      currentBalance.className = "onbudget";
+   }
+   
    workingBalanceReporting.append(currentBalance);
 }
 
