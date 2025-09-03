@@ -76,10 +76,11 @@ function updateBalance()
    workingBalance = dailyBudget;
    //reset the total spend to zero
    totalSpend = 0;
-   expenses.forEach(expense => {
-      console.log("Expense "+expense);
-      totalSpend = totalSpend+expense;
+   expenses.forEach(expenseItem => {
+      console.log("Expense "+expenseItem.value);
+      totalSpend = totalSpend+expenseItem.value;
       console.log("Running Total £"+totalSpend);
+      console.log("Last Items Purchased "+expenseItem.name);
    });
    workingBalance = workingBalance - totalSpend;
    const workingBalanceReporting = document.getElementById("working-balance");
@@ -108,6 +109,13 @@ function captureExpense()
    
    //Capture the expense listed and stored in the array of expenses (just value for now)
    let expense = parseFloat(document.getElementById("expense").value);
+   let description = document.getElementById("item-description");
+   console.log("Capture Expense Description is "+description);
+   if (description == "")
+   {
+      description = "Not provided";
+   }
+   
    console.log("Expense Captured £"+expense);
    if (isNaN(expense))
    {
@@ -116,7 +124,8 @@ function captureExpense()
    }
    else
    {
-      expenses.push(expense);
+      let expenseItem = {name: description, value:expense}; 
+      expenses.push(expenseItem);
       console.log("Number of expenses captured "+expenses.length);
       document.getElementById("expense").innerHTML = "";
       updateBalance();
