@@ -1,10 +1,11 @@
 Add introduction
 Add explainer text in simple results
 Travel money management theme?
-
+five ways this add value to a ND traveller
+What is the competition - positioning
 
 
 simple - swap £ and - when overspent. Think about that one.
-simple - extend the expenses object to include a description or default to " " if not entered and extend updateCalculation to use both elements of the expense
+simple - check the object variable names as would prefer more meaningful. 
 simple - create an output grid of expenses so far under the balance calculations in a new results card
 Simple - add a print option
