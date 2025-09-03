@@ -128,7 +128,7 @@ function captureExpense()
       expenses.push(expenseItem);
       console.log("Number of expenses captured "+expenses.length);
       document.getElementById("expense").innerHTML = "";
-      document.getElementByID("item-description").innerHTML = "";
+      document.getElementById("item-description").innerHTML = "";
       updateBalance();
    }
    
