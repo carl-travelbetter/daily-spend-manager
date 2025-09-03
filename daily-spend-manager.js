@@ -109,7 +109,7 @@ function captureExpense()
    
    //Capture the expense listed and stored in the array of expenses (just value for now)
    let expense = parseFloat(document.getElementById("expense").value);
-   let description = document.getElementById("item-description");
+   let description = document.getElementById("item-description").value;
    console.log("Capture Expense Description is "+description);
    if (description == "")
    {
@@ -128,6 +128,7 @@ function captureExpense()
       expenses.push(expenseItem);
       console.log("Number of expenses captured "+expenses.length);
       document.getElementById("expense").innerHTML = "";
+      document.getElementByID("item-description").innerHTML = "";
       updateBalance();
    }
    
