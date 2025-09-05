@@ -120,7 +120,7 @@ function outputExpenses()
    expenses.forEach(expenseItem => {
       expenseNumber++;
       const simpleExpenseOutput = document.createElement("p");
-      simpleExpenseOutput.textContent = expenseNumber+" "+expenseItem.name+" £"+expense.value;
+      simpleExpenseOutput.textContent = expenseNumber+" "+expenseItem.name+" £"+expenseItem.value;
       expenseList.appendChild(simpleExpenseOutput);
    });
       
