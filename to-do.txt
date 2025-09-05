@@ -9,3 +9,4 @@ simple - swap £ and - when overspent. Think about that one.
 simple - check the object variable names as would prefer more meaningful. 
 simple - create an output grid of expenses so far under the balance calculations in a new results card
 Simple - add a print option
+Fix text box so it doesn't zoom in on mobile
