@@ -7,7 +7,7 @@ What is the competition - positioning
 
 simple - swap £ and - when overspent. Think about that one.
 simple - check the object variable names as would prefer more meaningful. 
-simple - ability to delete previous entries
+simple - ability to delete previous entries (deleteBtn.textContent = "❌ Delete";)
 simple - Is it worth having a modify option? 
 simple - create an output grid of expenses so far under the balance calculations in a new results card
 Simple - add a print option
