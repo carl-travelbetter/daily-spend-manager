@@ -109,19 +109,26 @@ function outputExpenses()
    //Grab the array of expense objects and output in simple HTML 
 
    //Grab the output HTML element
-   const expenseList = document.getElementById("expense-list");
+   const expenseSummary = document.getElementById("expense-summary");
    //Reset the list
-   expenseList.innerHTML = "";
+   expenseSummary.innerHTML = "";
    const expenseListHeader = document.createElement("h2");
-   expenseListHeader.textContent = "Expenses....";
+   expenseListHeader.textContent = "Summary of Expenses";
    expenseList.appendChild(expenseListHeader);
    //Loop through the array and output a simple paragraph per expense
+   const expenseList = document.getElement("expense-list");
+   expenseList.innerHTML = "";
+   
    let expenseNumber = 0;
    expenses.forEach(expenseItem => {
       expenseNumber++;
-      const simpleExpenseOutput = document.createElement("p");
-      simpleExpenseOutput.textContent = expenseNumber+" "+expenseItem.id+" "+expenseItem.name+" £"+expenseItem.value;
-      expenseList.appendChild(simpleExpenseOutput);
+      const expenseListItem = document.createElement("li");
+      expenseListItem.textContent = expenseNumber+" "+expenseItem.id+" "+expenseItem.name+" £"+expenseItem.value;
+      //create button and see what happens
+      const deleteExpenseButton = document.createElement("button");
+      deleteExpenseButton.textContent = "D";
+      expenseListItem.appendChild(deleteExpenseButton);
+      expenseList.appendChild(expenseListItem);
    });
       
     
