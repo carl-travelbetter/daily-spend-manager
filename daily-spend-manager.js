@@ -116,8 +116,8 @@ function outputExpenses()
    expenseListHeader.textContent = "Summary of Expenses";
    expenseSummary.appendChild(expenseListHeader);
    //Loop through the array and output a simple paragraph per expense
-   const expenseList = document.getElementById("expense-list");
-   //expenseList.innerHTML = "";
+   const expenseList = document.createElement("ul");
+  
    
    let expenseNumber = 0;
    expenses.forEach(expenseItem => {
