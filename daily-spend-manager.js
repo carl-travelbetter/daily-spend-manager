@@ -99,6 +99,32 @@ function updateBalance()
    }
    
    workingBalanceReporting.append(currentBalance);
+   outputExpenses();
+}
+
+//function to output the list of expenses so far
+function outputExpenses()
+{
+   console.log("Output Expenses");
+   //Grab the array of expense objects and output in simple HTML 
+
+   //Grab the output HTML element
+   const expenseList = document.getElementById("expense-list");
+   //Reset the list
+   expenseList.innerHTML = "";
+   const expenseListHeader = document.createElement("h2");
+   expenseListHeader.textContent = "Expenses....";
+   expenseList.appendChild(expenseListHeader);
+   //Loop through the array and output a simple paragraph per expense
+   let expenseNumber = 0;
+   expenses.forEach(expenseItem => {
+      expenseNumber++;
+      const simpleExpenseOutput = document.createElement("p");
+      simpleExpenseOutput = expenseNumber+" "+expenseItem.description+" £"+expense.value;
+      expenseList.appendChild(simpleExpenseOutput);
+   });
+      
+    
 }
 
 //Function to capture each expense entered - will call the update balance function
