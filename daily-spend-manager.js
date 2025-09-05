@@ -131,7 +131,7 @@ function outputExpenses()
       expenseList.appendChild(expenseListItem);
    });
       
-    
+  expenseSummary.appendChild(expenseList);  
 }
 
 //Function to capture each expense entered - will call the update balance function
