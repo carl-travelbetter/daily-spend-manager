@@ -120,7 +120,7 @@ function outputExpenses()
    expenses.forEach(expenseItem => {
       expenseNumber++;
       const simpleExpenseOutput = document.createElement("p");
-      simpleExpenseOutput.textContent = expenseNumber+" "+expenseItem.name+" £"+expenseItem.value;
+      simpleExpenseOutput.textContent = expenseNumber+" "+expenseItem.id+" "+expenseItem.name+" £"+expenseItem.value;
       expenseList.appendChild(simpleExpenseOutput);
    });
       
@@ -150,11 +150,12 @@ function captureExpense()
    }
    else
    {
-      let expenseItem = {name: description, value:expense}; 
+      let id = expenses.length+1;
+      let expenseItem = {id:id, name:description, value:expense}; 
       expenses.push(expenseItem);
       console.log("Number of expenses captured "+expenses.length);
-      document.getElementById("expense").innerHTML = "";
-      document.getElementById("item-description").innerHTML = "";
+      document.getElementById("expense").innerHTML = " ";
+      document.getElementById("item-description").innerHTML = " ";
       updateBalance();
    }
    
