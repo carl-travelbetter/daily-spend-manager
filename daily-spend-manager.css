@@ -105,16 +105,48 @@ h3, h4, h5 {
   color:red;
 }
 
+li {
+  display: flex;
+  border-bottom: 1px solid #ccc; /* optional table-like look */
+  padding: 4px 0;
+}
+
+li span {
+ flex-shrink: 0;
+  flex-grow: 0;
+  overflow-wrap: break-word; /* allow wrapping */
+  white-space: normal;       /* normal wrapping */
+}
+
+li .span-id {
+  flex-basis: 10%;
+}
+
+li .span-name {
+  flex-basis: 60%;
+  text-align: right;
+}
+
+li .span-amount {
+  flex-basis: 15%;
+  text-align: right;
+}
+
+li .span-delete {
+  flex-basis: 15%;
+  text-align: right;
+}
+
 .span-id {
-  color:purple;
+  color:#000005;
 }
 
 .span-name {
-  color:pink;
+  color:#000005;
 }
 
 .span-amount {
-  color:green;
+  color:#000005;
 }
 
 
