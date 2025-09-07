@@ -125,7 +125,7 @@ function outputExpenses()
       const expenseListItem = document.createElement("li");
       const expenseItemId = document.createElement("span");
       expenseItemId.className = "span-id";
-      expenseItemId.textcontent = expenseItem.id;
+      expenseItemId.textContent = expenseItem.id;
       expenseListItem.appendChild(expenseItemId);
       const expenseItemName = document.createElement("span");
       expenseItemName.className = "span-name";
@@ -137,9 +137,13 @@ function outputExpenses()
       expenseListItem.appendChild(expenseItemAmount);
       //expenseListItem.textContent = expenseNumber+" "+expenseItem.id+" "+expenseItem.name+" £"+expenseItem.value;
       //create button and see what happens
+      const expenseDelete = document.createElement("span");
+      expenseDelete.className = "span-delete";
+      
       const deleteExpenseButton = document.createElement("button");
       deleteExpenseButton.textContent = "❌";
-      expenseListItem.appendChild(deleteExpenseButton);
+      expenseDelete.appendChild(deleteExpenseButton);
+      expenseListItem.appendChild(expenseDelete);
       expenseList.appendChild(expenseListItem);
    });
       
