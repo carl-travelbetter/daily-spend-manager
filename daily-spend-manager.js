@@ -123,10 +123,22 @@ function outputExpenses()
    expenses.forEach(expenseItem => {
       expenseNumber++;
       const expenseListItem = document.createElement("li");
-      expenseListItem.textContent = expenseNumber+" "+expenseItem.id+" "+expenseItem.name+" £"+expenseItem.value;
+      const expenseItemId = document.createElement("span");
+      expenseItemId.className = "span-id";
+      expenseItemId.textcontent = expenseItem.id;
+      expenseListItem.appendChild(expenseItemId);
+      const expenseItemName = document.createElement("span");
+      expenseItemName.className = "span-name";
+      expenseItemName.textContent = expenseItem.name;
+      expenseListItem.appendChild(expenseItemName);
+      const expenseItemAmount = document.createElement("span");
+      expenseItemAmount.className = "span-amount";
+      expenseItemAmount.textContent = "£"+expenseItem.value;
+      expenseListItem.appendChild(expenseItemAmount);
+      //expenseListItem.textContent = expenseNumber+" "+expenseItem.id+" "+expenseItem.name+" £"+expenseItem.value;
       //create button and see what happens
       const deleteExpenseButton = document.createElement("button");
-      deleteExpenseButton.textContent = "D";
+      deleteExpenseButton.textContent = "❌";
       expenseListItem.appendChild(deleteExpenseButton);
       expenseList.appendChild(expenseListItem);
    });
