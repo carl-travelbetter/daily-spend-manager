@@ -148,6 +148,7 @@ function outputExpenses()
       deleteExpenseButton.addEventListener("click", () => {
       
       console.log("Delete Expense Button Clicked");
+      console.log("Delete ID = "+deleteExpenseButton.dataset.label);   
       expenses.pop(deleteExpenseButton.dataset.label); 
       updateBalance();
       });  
