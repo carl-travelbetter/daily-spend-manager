@@ -149,7 +149,7 @@ function outputExpenses()
       
       console.log("Delete Expense Button Clicked");
       console.log("Delete ID = "+deleteExpenseButton.dataset.label);   
-      expenses.pop(deleteExpenseButton.dataset.label); 
+      expenses.splice(deleteExpenseButton.dataset.label, 1); 
       updateBalance();
       });  
       
