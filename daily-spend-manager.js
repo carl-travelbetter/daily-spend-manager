@@ -142,6 +142,16 @@ function outputExpenses()
       
       const deleteExpenseButton = document.createElement("button");
       deleteExpenseButton.textContent = "❌";
+      deleteExpenseButton.setAttribute("data-label", expenseNumber);
+      //Make the button do something
+       //Make the button do something when clicked
+      deleteExpenseButton.addEventListener("click", () => {
+      
+      console.log("Delete Expense Button Clicked");
+      expenses.pop(deleteExpenseButton.dataset.label); 
+      
+      });  
+      
       expenseDelete.appendChild(deleteExpenseButton);
       expenseListItem.appendChild(expenseDelete);
       expenseList.appendChild(expenseListItem);
