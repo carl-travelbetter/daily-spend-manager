@@ -142,7 +142,7 @@ function outputExpenses()
       
       const deleteExpenseButton = document.createElement("button");
       deleteExpenseButton.textContent = "❌";
-      deleteExpenseButton.setAttribute("data-label", expenseNumber);
+      deleteExpenseButton.setAttribute("data-label", expenseNumber-1);
       //Make the button do something
        //Make the button do something when clicked
       deleteExpenseButton.addEventListener("click", () => {
