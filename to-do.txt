@@ -9,3 +9,5 @@ simple - Is it worth having a modify option?
 Simple - add a print option
 Fix the layout for the expense adding form, needs to align and be smaller boxes. Was on one line previously and now not? Could you put it in a grid?
 Clear expense fields after submit
+Shrink or hide daily calc screen one submitted
+Move user view on expense submit to list or top of button
