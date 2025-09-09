@@ -171,8 +171,11 @@ li .span-delete {
 }
 
 .capture-expense > div {
-  background-color: #f1f1f1;
-   margin:10px;
+  background-color: red;
+  margin:10px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 1rem;
 }
 
 
