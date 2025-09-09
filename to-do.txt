@@ -8,3 +8,4 @@ simple - check the object variable names as would prefer more meaningful.
 simple - Is it worth having a modify option? 
 Simple - add a print option
 Fix the layout for the expense adding form, needs to align and be smaller boxes. Was on one line previously and now not? Could you put it in a grid?
+Clear expense fields after submit
