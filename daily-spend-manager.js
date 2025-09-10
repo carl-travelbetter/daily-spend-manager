@@ -161,8 +161,8 @@ function outputExpenses()
   expenseSummary.appendChild(expenseList);  
 
   //clear the input fields
-   document.getElementById("item-description").innerHTML = "";
-   document.getElementById("expense").textContent = "";
+   document.getElementById("item-description").value = "";
+   document.getElementById("expense").value = "";
    console.log("Trying to clear the input fields");
 }
 
