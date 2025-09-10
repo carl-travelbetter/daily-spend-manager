@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Daily Spend Manager</title>
+  <title>Daily Travel Spend Manager</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <meta name="description" content="Manage your daily travel spend easily with this AuDHD friendly application. Travel money, weekly allowance, and even your monthly budget can be easily managed with our Daily Spend Manager">
@@ -14,8 +14,8 @@
     <p>Take away the worry of running out of money on your holiday with this AuDHD friendly Daily Spend Manager. </p>
   </section>
   <section id="simpleapp" class="controlbar">
-  <h2>Simple Daily Spend Manager</h2>
-    <p>Enter balance/budget £</p>
+  <h2>Daily Travel Spend Manager</h2>
+    <p>Enter Budget £</p>
     <input class="balance" type="number" id="simpleBudget" placeholder="1000" /><br>
     <p>Select Target Date</p>
     <input type="date" id="simpleEndDate" /><br>
@@ -37,15 +37,12 @@
     </div>
     <div class="expense-capture" id="expense-capture" hidden>
       <div class="capture-expense">
-        <div>Decription<input class="item-description" id="item-description" type="text" placeholder="(Optional)" size="20" value=""/></div>
+        <div>Description<input class="item-description" id="item-description" type="text" placeholder="(Optional)" size="20" value=""/></div>
         <div>Amount £ <input class="expense" id="expense" size="5" type="number" /></div>
         <div><button class="calcButton" onClick="captureExpense()">Submit</button></div>
       </div>
-      
       <div id="working-balance"></div>
-      <div id="expense-summary">
-       
-      </div>
+      <div id="expense-summary"></div>
       <div class="additional-controls">
         <div><button class="calcButton" onClick="clearExpenseGrid()">Clear All</button></div>
         <div><button class="calcButton" onClick="printExpenseGrid()">Print</button></div>
