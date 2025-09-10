@@ -231,6 +231,8 @@ function resetDailySpendLimit()
 function clearExpenseGrid()
 {
    console.log("Clear Expense Grid");
+   expenses = [];
+   updateBalance();
 }
 
 function printExpenseGrid()
