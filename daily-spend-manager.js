@@ -159,6 +159,10 @@ function outputExpenses()
    });
       
   expenseSummary.appendChild(expenseList);  
+
+  //clear the input fields
+   document.getElementById("item-description").innerHTML = "";
+   document.getElementById("expense").innerHTML = "";
 }
 
 //Function to capture each expense entered - will call the update balance function
