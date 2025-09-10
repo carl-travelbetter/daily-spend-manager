@@ -42,6 +42,7 @@ function simpleCalculation()
         workingBalanceMessage.textContent = "Current Balance = £"+workingBalance;
         workingBalanceContainer.append(workingBalanceMessage);
         document.getElementById("simpleapp").hidden = true;
+        updateBalance();
     }
    else
     {
