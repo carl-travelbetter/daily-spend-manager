@@ -22,7 +22,7 @@ function simpleCalculation()
    //Calculate the days between the end date and today in milliseconds
    const daysBetweenMilli = endDay - today;
    //Convert Milliseconds to days, set a min value of 1 and ensure a rounded day count
-   let daysBetween = Math.max(1, Maths.floor(daysBetweenMilli / (1000 * 3600 * 24)));
+   let daysBetween = Math.max(1, Math.floor(daysBetweenMilli / (1000 * 3600 * 24)));
    console.log("Difference in Days = "+daysBetween);
    //Create the daily spend limit variable and set to Zero               
    let dailyLimit = 0;
