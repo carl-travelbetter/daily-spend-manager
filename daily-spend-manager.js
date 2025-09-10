@@ -41,6 +41,7 @@ function simpleCalculation()
         const workingBalanceMessage = document.createElement("p");
         workingBalanceMessage.textContent = "Current Balance = £"+workingBalance;
         workingBalanceContainer.append(workingBalanceMessage);
+        document.getElementById("simpleapp").hidden = true;
     }
    else
     {
@@ -219,6 +220,11 @@ function captureExpense()
    let totalSpend = expense1 + expense2 + expense3 + expense4;
    console.log("Total Spend = £"+totalSpend);*/
    
+}
+
+function resetDailySpendLimit()
+{
+    document.getElementById("simpleapp").hidden = false;
 }
 
 function clearExpenseGrid()
