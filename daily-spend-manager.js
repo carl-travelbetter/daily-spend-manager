@@ -37,7 +37,7 @@ function simpleCalculation()
         resultsArea.innerHTML = "";
         resultsArea.className = "resultCard";
         const dailyLimitResults = document.createElement("p");
-        dailyLimitResults.textContent = "Your Daily Spend Limit Is £"+gbp.format(dailyLimit);
+        dailyLimitResults.textContent = "Your Daily Spend Limit Is "+gbp.format(dailyLimit);
         resultsArea.append(dailyLimitResults);
         //Set the working balance to the be the calculated daily limit allowed
         workingBalance = dailyLimit;
@@ -46,7 +46,7 @@ function simpleCalculation()
         document.getElementById("expense-capture").hidden = false;
         const workingBalanceContainer = document.getElementById("working-balance");
         const workingBalanceMessage = document.createElement("p");
-        workingBalanceMessage.textContent = "Current Balance = £"+gbp.format(workingBalance);
+        workingBalanceMessage.textContent = "Current Balance = "+gbp.format(workingBalance);
         workingBalanceContainer.append(workingBalanceMessage);
         document.getElementById("simpleapp").hidden = true;
         updateBalance();
@@ -100,15 +100,15 @@ function updateBalance()
    //If the working balance has gone under 0 then set the colour to red to indicate overspent
    if (workingBalance < 0)
    {
-      currentBalance.textContent = "Daily Budget Balance Remaining £"+gbp.format(workingBalance);
+      currentBalance.textContent = "Daily Budget Balance Remaining "+gbp.format(workingBalance);
       currentBalance.className = "overspent";
-      remainingBudgetNote.textContent = "Remaining Overall Budget £"+gbp.format(remainingTotalBudget);
+      remainingBudgetNote.textContent = "Remaining Overall Budget "+gbp.format(remainingTotalBudget);
    }
    else
    {
-      currentBalance.textContent = "Daily Budget Balance Remaining £"+gbp.format(workingBalance);
+      currentBalance.textContent = "Daily Budget Balance Remaining "+gbp.format(workingBalance);
       currentBalance.className = "onbudget";
-      remainingBudgetNote.textContent = "Remaining Overall Budget £"+gbp.format(remainingTotalBudget);
+      remainingBudgetNote.textContent = "Remaining Overall Budget "+gbp.format(remainingTotalBudget);
    }
    
    workingBalanceReporting.append(currentBalance);
