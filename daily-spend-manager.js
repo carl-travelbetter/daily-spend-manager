@@ -92,7 +92,7 @@ function updateBalance()
    const workingBalanceReporting = document.getElementById("working-balance");
    workingBalanceReporting.innerHTML = "";
    const currentBalance = document.createElement("p");
-   const remainingBudgetNote = docuement.createElement("p");
+   const remainingBudgetNote = document.createElement("p");
    //If the working balance has gone under 0 then set the colour to red to indicate overspent
    if (workingBalance < 0)
    {
