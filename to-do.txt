@@ -8,6 +8,6 @@ simple - swap £ and - when overspent. Think about that one.
 simple - Is it worth having a modify option? 
 Simple - add a print option
 
-
+Add in a total budget remaining figure
 Shrink or hide daily calc screen one submitted
 Move user view on expense submit to list or top of button
