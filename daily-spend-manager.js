@@ -162,7 +162,8 @@ function outputExpenses()
 
   //clear the input fields
    document.getElementById("item-description").innerHTML = "";
-   document.getElementById("expense").innerHTML = "";
+   document.getElementById("expense").textContent = "";
+   console.log("Trying to clear the input fields");
 }
 
 //Function to capture each expense entered - will call the update balance function
