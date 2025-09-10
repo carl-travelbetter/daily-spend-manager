@@ -163,7 +163,15 @@ function outputExpenses()
   //clear the input fields
    document.getElementById("item-description").value = "";
    document.getElementById("expense").value = "";
-   console.log("Trying to clear the input fields");
+
+   
+    if (expenseSummary) {
+        expenseSummery.scrollIntoView({
+            behavior: "smooth", // smooth scrolling
+            block: "start"      // align to top
+        });
+    }
+   
 }
 
 //Function to capture each expense entered - will call the update balance function
