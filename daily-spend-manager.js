@@ -166,7 +166,7 @@ function outputExpenses()
 
    
     if (expenseSummary) {
-        expenseSummery.scrollIntoView({
+        expenseSummary.scrollIntoView({
             behavior: "smooth", // smooth scrolling
             block: "start"      // align to top
         });
