@@ -4,6 +4,9 @@ let expenses = [];
 let totalSpend = 0;
 let totalBudget = 0;
 
+// Create a global function to convert a number to GBP (£) format
+const gbp = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' });
+
 function simpleCalculation()
 {
    console.log("Simple Calculation");
@@ -18,8 +21,8 @@ function simpleCalculation()
    const endDay = new Date(selectedDate); 
    //Calculate the days between the end date and today in milliseconds
    const daysBetweenMilli = endDay - today;
-   //Convert Milliseconds to days
-   let daysBetween = daysBetweenMilli / (1000 * 3600 * 24);
+   //Convert Milliseconds to days, set a min value of 1 and ensure a rounded day count
+   let daysBetween = Math.max(1, Maths.floor(daysBetweenMilli / (1000 * 3600 * 24)));
    console.log("Difference in Days = "+daysBetween);
    //Create the daily spend limit variable and set to Zero               
    let dailyLimit = 0;
@@ -27,13 +30,14 @@ function simpleCalculation()
     if (daysBetween > 0)
     {
         //Set the new daily limit to total balance / number of days
-        dailyLimit = (balance / daysBetween).toFixed(2);
+        //dailyLimit = (balance / daysBetween).toFixed(2);
+        dailyLimit = balance / daysBetween;
         console.log("Daily Cash Limit £"+ dailyLimit);
         const resultsArea = document.getElementById("results");
         resultsArea.innerHTML = "";
         resultsArea.className = "resultCard";
         const dailyLimitResults = document.createElement("p");
-        dailyLimitResults.textContent = "Your Daily Spend Limit Is £"+dailyLimit;
+        dailyLimitResults.textContent = "Your Daily Spend Limit Is £"+gbp.format(dailyLimit);
         resultsArea.append(dailyLimitResults);
         //Set the working balance to the be the calculated daily limit allowed
         workingBalance = dailyLimit;
@@ -42,7 +46,7 @@ function simpleCalculation()
         document.getElementById("expense-capture").hidden = false;
         const workingBalanceContainer = document.getElementById("working-balance");
         const workingBalanceMessage = document.createElement("p");
-        workingBalanceMessage.textContent = "Current Balance = £"+workingBalance;
+        workingBalanceMessage.textContent = "Current Balance = £"+gbp.format(workingBalance);
         workingBalanceContainer.append(workingBalanceMessage);
         document.getElementById("simpleapp").hidden = true;
         updateBalance();
@@ -84,7 +88,7 @@ function updateBalance()
    expenses.forEach(expenseItem => {
       console.log("Expense "+expenseItem.value);
       totalSpend = totalSpend+expenseItem.value;
-      console.log("Running Total £"+totalSpend);
+      console.log("Running Total "+gbp.format(totalSpend));
       console.log("Last Items Purchased "+expenseItem.name);
    });
    workingBalance = workingBalance - totalSpend;
@@ -96,15 +100,15 @@ function updateBalance()
    //If the working balance has gone under 0 then set the colour to red to indicate overspent
    if (workingBalance < 0)
    {
-      currentBalance.textContent = "Daily Budget Balance Remaining £"+workingBalance.toFixed(2);
+      currentBalance.textContent = "Daily Budget Balance Remaining £"+gbp.format(workingBalance);
       currentBalance.className = "overspent";
-      remainingBudgetNote.textContent = "Remaining Overall Budget £"+remainingTotalBudget.toFixed(2);
+      remainingBudgetNote.textContent = "Remaining Overall Budget £"+gbp.format(remainingTotalBudget);
    }
    else
    {
-      currentBalance.textContent = "Daily Budget Balance Remaining £"+workingBalance.toFixed(2);
+      currentBalance.textContent = "Daily Budget Balance Remaining £"+gbp.format(workingBalance);
       currentBalance.className = "onbudget";
-      remainingBudgetNote.textContent = "Remaining Overall Budget £"+remainingTotalBudget.toFixed(2);
+      remainingBudgetNote.textContent = "Remaining Overall Budget £"+gbp.format(remainingTotalBudget);
    }
    
    workingBalanceReporting.append(currentBalance);
@@ -143,7 +147,7 @@ function outputExpenses()
       expenseListItem.appendChild(expenseItemName);
       const expenseItemAmount = document.createElement("span");
       expenseItemAmount.className = "span-amount";
-      expenseItemAmount.textContent = "£"+expenseItem.value;
+      expenseItemAmount.textContent = gbp.format(expenseItem.value);
       expenseListItem.appendChild(expenseItemAmount);
       //expenseListItem.textContent = expenseNumber+" "+expenseItem.id+" "+expenseItem.name+" £"+expenseItem.value;
       //create button and see what happens
