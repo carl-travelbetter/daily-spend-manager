@@ -2,11 +2,14 @@ let workingBalance = 0;
 let dailyBudget = 0;
 let expenses = [];
 let totalSpend = 0;
+let totalBudget = 0;
 
 function simpleCalculation()
 {
    console.log("Simple Calculation");
    let balance = parseInt(document.getElementById("simpleBudget").value);
+   //Set the remaining total budget to the balance entered
+   totalBudget = balance;
    console.log("Balance Entered "+balance);
    //Get today's date
    const today = new Date();
@@ -85,22 +88,27 @@ function updateBalance()
       console.log("Last Items Purchased "+expenseItem.name);
    });
    workingBalance = workingBalance - totalSpend;
+   let remainingTotalBudget = totalBudget - totalSpend;
    const workingBalanceReporting = document.getElementById("working-balance");
    workingBalanceReporting.innerHTML = "";
    const currentBalance = document.createElement("p");
+   const remainingBudgetNote = docuement.createElement("p");
    //If the working balance has gone under 0 then set the colour to red to indicate overspent
    if (workingBalance < 0)
    {
       currentBalance.textContent = "Daily Budget Balance Remaining £"+workingBalance.toFixed(2);
       currentBalance.className = "overspent";
+      remainingBudgetNote.textContent = "Remaining Overall Budget £"+remainingTotalBudget.toFixed(2);
    }
    else
    {
       currentBalance.textContent = "Daily Budget Balance Remaining £"+workingBalance.toFixed(2);
       currentBalance.className = "onbudget";
+      remainingBudgetNote.textContent = "Remaining Overall Budget £"+remainingTotalBudget.toFixed(2);
    }
    
    workingBalanceReporting.append(currentBalance);
+   workingBalanceReporting.append(remainingBudgetNote);
    outputExpenses();
 }
 
