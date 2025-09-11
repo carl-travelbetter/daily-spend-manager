@@ -4,6 +4,12 @@ let expenses = [];
 let totalSpend = 0;
 let totalBudget = 0;
 
+//set a storage key
+const STORAGE_KEY = "tb_dailySpendData";
+
+//retrieve stored data
+//let state = 
+
 // Create a global function to convert a number to GBP (£) format
 const gbp = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' });
 
