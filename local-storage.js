@@ -1,29 +1,54 @@
-// Pick a key name for our storage
-const STORAGE_KEY = "myNote";
+const STORAGE_KEY = "expenses";
 
-// Grab elements
-const input = document.getElementById("noteInput");
-const saveBtn = document.getElementById("saveBtn");
+// Get elements
+const descInput = document.getElementById("descInput");
+const amountInput = document.getElementById("amountInput");
+const addBtn = document.getElementById("addBtn");
 const clearBtn = document.getElementById("clearBtn");
-const display = document.getElementById("noteDisplay");
+const expensesList = document.getElementById("expensesList");
 
-// 1. Load any saved note when the page starts
-const savedNote = localStorage.getItem(STORAGE_KEY);
-if (savedNote) {
-  display.textContent = savedNote;
-  input.value = savedNote;
+// Load saved expenses or start empty
+let expenses = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+// Render function
+function renderExpenses() {
+  expensesList.innerHTML = ""; // clear old list
+  expenses.forEach((exp, index) => {
+    const li = document.createElement("li");
+    li.textContent = `${exp.desc} - £${exp.amount.toFixed(2)}`;
+    expensesList.appendChild(li);
+  });
 }
 
-// 2. Save note when clicking Save
-saveBtn.addEventListener("click", () => {
-  const note = input.value;
-  localStorage.setItem(STORAGE_KEY, note);
-  display.textContent = note;
+// Save function
+function saveExpenses() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(expenses));
+}
+
+// Add expense
+addBtn.addEventListener("click", () => {
+  const desc = descInput.value.trim();
+  const amount = parseFloat(amountInput.value);
+  
+  if (!desc || isNaN(amount)) return; // simple validation
+  
+  expenses.push({ desc, amount });
+  saveExpenses();
+  renderExpenses();
+
+  // clear inputs
+  descInput.value = "";
+  amountInput.value = "";
+  descInput.focus();
 });
 
-// 3. Clear note when clicking Clear
+// Clear all
 clearBtn.addEventListener("click", () => {
-  localStorage.removeItem(STORAGE_KEY);
-  display.textContent = "";
-  input.value = "";
+  expenses = [];
+  saveExpenses();
+  renderExpenses();
 });
+
+// Initial render on page load
+renderExpenses();
+
