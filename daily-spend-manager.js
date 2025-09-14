@@ -26,7 +26,7 @@ function simpleCalculation()
    console.log("Balance Entered "+balance);
    //Set the remaining total budget to the balance entered
    state.budget = balance;
-   console.log("Balance Entered "+state.balance);
+   console.log("Balance Set "+state.budget);
    //Get today's date
    const today = new Date();
    //Get the data entered by the user
@@ -44,7 +44,7 @@ function simpleCalculation()
     {
         //Set the new daily limit to total balance / number of days
         //dailyLimit = (balance / daysBetween).toFixed(2);
-        state.dailyLimit = state.balance / daysBetween;
+        state.dailyLimit = state.budget / daysBetween;
         console.log("Daily Cash Limit £"+ state.dailyLimit);
         const resultsArea = document.getElementById("results");
         resultsArea.innerHTML = "";
