@@ -95,7 +95,7 @@ function updateBalance()
 {
    console.log("Update Balance");
    //Reset the working balance
-   workingBalance = state.dailyBudget;
+   workingBalance = state.dailyLimit;
    //reset the total spend to zero
    totalSpend = 0;
    state.expenses.forEach(expenseItem => {
