@@ -233,9 +233,14 @@ function clearExpenseGrid()
 {
    console.log("Clear Expense Grid"); 
    //Open a dialog with confirmation and Cancel / Clear options
-   
-   
-   startNewBudget();
+   if (confirm("Clear all data - This can't be undone!"))
+   {
+      startNewBudget();
+   }
+   else
+   {
+      return;
+   }
 }
 
 function printExpenseGrid()
