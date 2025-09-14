@@ -275,6 +275,16 @@ function loadSavedBudget()
 {
    console.log("Load Saved Budget");
    //Check if we have some data, if not then new else load from state
+   //Need to add the check in 
+   if (state.expenses.length === 0)
+   {
+      console.log("Expenses is Empty so start new");
+      startNewBudget();
+   }
+   else
+   {
+      outputExpenses();
+   }
 }
 
 function saveState() {
