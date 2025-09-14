@@ -2,17 +2,19 @@ let workingBalance = 0;
 let dailyBudget = 0;
 //let expenses = [];
 let totalSpend = 0;
-let totalBudget = 0;
+//let totalBudget = 0;
 
 //set a storage key
 const STORAGE_KEY = "tb_dailySpendData";
-//let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, endDate: null };
+
 
 
 //retrieve stored data
 //let expenses = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [] ;
 let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, endDate: null };
-let expenses = state.expenses;
+//let expenses = state.expenses;
+let totalBudget = state.budget;
+let tripEndDate = state.endDate;
 
 // Create a global function to convert a number to GBP (£) format
 const gbp = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' });
@@ -95,7 +97,7 @@ function updateBalance()
    workingBalance = dailyBudget;
    //reset the total spend to zero
    totalSpend = 0;
-   expenses.forEach(expenseItem => {
+   state.expenses.forEach(expenseItem => {
       console.log("Expense "+expenseItem.value);
       totalSpend = totalSpend+expenseItem.value;
       console.log("Running Total "+gbp.format(totalSpend));
@@ -123,6 +125,7 @@ function updateBalance()
    
    workingBalanceReporting.append(currentBalance);
    workingBalanceReporting.append(remainingBudgetNote);
+   saveState();
    outputExpenses();
 }
 
@@ -144,7 +147,7 @@ function outputExpenses()
   
    
    let expenseNumber = 0;
-   expenses.forEach(expenseItem => {
+   state.expenses.forEach(expenseItem => {
       expenseNumber++;
       const expenseListItem = document.createElement("li");
       const expenseItemId = document.createElement("span");
@@ -223,7 +226,7 @@ function captureExpense()
    {
       let id = expenses.length+1;
       let expenseItem = {id:id, name:description, value:expense}; 
-      expenses.push(expenseItem);
+      state.expenses.push(expenseItem);
       console.log("Number of expenses captured "+expenses.length);
       document.getElementById("expense").innerHTML = " ";
       document.getElementById("item-description").innerHTML = " ";
@@ -261,3 +264,21 @@ function printExpenseGrid()
 {
    console.log("Print Expense Grid");
 }
+
+function startNewBudget()
+{
+   console.log("Start New Budget");
+   document.getElementById("simpleapp").hidden = false;
+}
+
+function loadSavedBudget()
+{
+   console.log("Load Saved Budget");
+   //Check if we have some data, if not then new else load from state
+}
+
+function saveState() {
+  console.log("Saving Budget and Spend Data...");
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
