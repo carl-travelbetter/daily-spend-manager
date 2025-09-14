@@ -227,7 +227,7 @@ function captureExpense()
       let id = state.expenses.length+1;
       let expenseItem = {id:id, name:description, value:expense}; 
       state.expenses.push(expenseItem);
-      console.log("Number of expenses captured "+expenses.length);
+      console.log("Number of expenses captured "+state.expenses.length);
       document.getElementById("expense").innerHTML = " ";
       document.getElementById("item-description").innerHTML = " ";
       updateBalance();
