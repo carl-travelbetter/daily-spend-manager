@@ -243,10 +243,10 @@ function resetDailySpendLimit()
 function clearExpenseGrid()
 {
    console.log("Clear Expense Grid");
-   state.expenses = [];
-   state.budget = 0;
-   state.dailyLimit = 0;
-   state.endDate = null;
+  // state.expenses = [];
+  // state.budget = 0;
+  // state.dailyLimit = 0;
+ //  state.endDate = null;
    startNewBudget();
 }
 
@@ -258,6 +258,7 @@ function printExpenseGrid()
 function startNewBudget()
 {
    console.log("Start New Budget");
+   localStorage.removeItem(STORAGE_KEY);
    document.getElementById("simpleapp").hidden = false;
    document.getElementById("expense-capture").hidden = true;
 }
