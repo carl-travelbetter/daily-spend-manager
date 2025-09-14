@@ -259,8 +259,8 @@ function printExpenseGrid()
 function startNewBudget()
 {
    console.log("Start New Budget");
-   localStorage.removeItem(STORAGE_KEY);
-   state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, endDate: null };
+   //localStorage.removeItem(STORAGE_KEY);
+   //state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, endDate: null };
    document.getElementById("simpleapp").hidden = false;
    document.getElementById("expense-capture").hidden = true;
 }
