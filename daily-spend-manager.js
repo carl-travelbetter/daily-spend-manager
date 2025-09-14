@@ -259,6 +259,7 @@ function startNewBudget()
 {
    console.log("Start New Budget");
    document.getElementById("simpleapp").hidden = false;
+   document.getElementById("expense-capture").hidden = true;
 }
 
 function loadSavedBudget()
