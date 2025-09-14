@@ -13,7 +13,11 @@
     <h1>Daily Spend Manager</h1>
     <p>Take away the worry of running out of money on your holiday with this AuDHD friendly Daily Spend Manager. </p>
   </section>
-  <section id="simpleapp" class="controlbar">
+  <section id="loadornew" class="controlbar">
+    <button class="calcButton" onClick="loadSavedBudget()">Load Data</button>
+    <button class="calcButton" onClick="startNewBudget()">Start New</button>  
+  </section>
+  <section id="simpleapp" class="controlbar" hidden>
   <h2>Daily Travel Spend Manager</h2>
     <label for="simpleBudget">Enter Budget £</label>
     <input class="balance" type="number" id="simpleBudget" placeholder="1000" /><br><br><br>
