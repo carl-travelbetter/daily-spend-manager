@@ -278,7 +278,7 @@ function loadSavedBudget()
    else
    {
       document.getElementById("expense-capture").hidden = false;
-      outputExpenses();
+      updateBalance();
    }
 }
 
