@@ -1,8 +1,7 @@
 let workingBalance = 0;
-//let dailyBudget = 0;
-//let expenses = [];
+
 let totalSpend = 0;
-//let totalBudget = 0;
+
 
 //set a storage key
 const STORAGE_KEY = "tb_dailySpendData";
@@ -12,9 +11,7 @@ const STORAGE_KEY = "tb_dailySpendData";
 //retrieve stored data
 //let expenses = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [] ;
 let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, endDate: null };
-//let expenses = state.expenses;
-//let totalBudget = state.budget;
-//let tripEndDate = state.endDate;
+
 
 // Create a global function to convert a number to GBP (£) format
 const gbp = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' });
@@ -22,10 +19,7 @@ const gbp = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' 
 function simpleCalculation()
 {
    console.log("Simple Calculation");
-   let balance = parseInt(document.getElementById("simpleBudget").value);
-   console.log("Balance Entered "+balance);
-   //Set the remaining total budget to the balance entered
-   state.budget = balance;
+   state.budget = parseInt(document.getElementById("simpleBudget").value);
    console.log("Balance Set "+state.budget);
    //Get today's date
    const today = new Date();
@@ -50,12 +44,11 @@ function simpleCalculation()
         resultsArea.innerHTML = "";
         resultsArea.className = "resultCard";
         const dailyLimitResults = document.createElement("p");
-        dailyLimitResults.textContent = "Your Daily Spend Limit Is "+gbp.format(state.dailyLimit);
+        dailyLimitResults.textContent = "Your Reommended Daily Spend Limit Is "+gbp.format(state.dailyLimit);
         resultsArea.append(dailyLimitResults);
         //Set the working balance to the be the calculated daily limit allowed
         workingBalance = state.dailyLimit;
-        //Set the global daily spend limit
-        //dailyBudget = dailyLimit;
+        //Enable expense capture
         document.getElementById("expense-capture").hidden = false;
         const workingBalanceContainer = document.getElementById("working-balance");
         const workingBalanceMessage = document.createElement("p");
@@ -110,19 +103,14 @@ function updateBalance()
    workingBalanceReporting.innerHTML = "";
    const currentBalance = document.createElement("p");
    const remainingBudgetNote = document.createElement("p");
-   //If the working balance has gone under 0 then set the colour to red to indicate overspent
-   if (workingBalance < 0)
-   {
-      currentBalance.textContent = "Daily Budget Balance Remaining "+gbp.format(workingBalance);
-      currentBalance.className = "overspent";
-      remainingBudgetNote.textContent = "Remaining Overall Budget "+gbp.format(remainingTotalBudget);
-   }
-   else
-   {
-      currentBalance.textContent = "Daily Budget Balance Remaining "+gbp.format(workingBalance);
+   
+   
+      currentBalance.textContent = "Total Spent "+gbp.format(totalSpend);
       currentBalance.className = "onbudget";
-      remainingBudgetNote.textContent = "Remaining Overall Budget "+gbp.format(remainingTotalBudget);
-   }
+      remainingBudgetNote.textContent = "Remaining Budget "+gbp.format(remainingTotalBudget);
+   
+     
+   
    
    workingBalanceReporting.append(currentBalance);
    workingBalanceReporting.append(remainingBudgetNote);
@@ -243,11 +231,10 @@ function resetDailySpendLimit()
 
 function clearExpenseGrid()
 {
-   console.log("Clear Expense Grid");
-  // state.expenses = [];
-  // state.budget = 0;
-  // state.dailyLimit = 0;
- //  state.endDate = null;
+   console.log("Clear Expense Grid"); 
+   //Open a dialog with confirmation and Cancel / Clear options
+   
+   
    startNewBudget();
 }
 
