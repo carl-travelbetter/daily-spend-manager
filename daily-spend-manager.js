@@ -1,14 +1,18 @@
 let workingBalance = 0;
 let dailyBudget = 0;
-let expenses = [];
+//let expenses = [];
 let totalSpend = 0;
 let totalBudget = 0;
 
 //set a storage key
 const STORAGE_KEY = "tb_dailySpendData";
+//let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, endDate: null };
+
 
 //retrieve stored data
-//let state = 
+//let expenses = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [] ;
+let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, endDate: null };
+let expenses = state.expenses;
 
 // Create a global function to convert a number to GBP (£) format
 const gbp = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' });
