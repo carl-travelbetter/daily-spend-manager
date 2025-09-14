@@ -44,7 +44,7 @@ function simpleCalculation()
         resultsArea.innerHTML = "";
         resultsArea.className = "resultCard";
         const dailyLimitResults = document.createElement("p");
-        dailyLimitResults.textContent = "Your Reommended Daily Spend Limit Is "+gbp.format(state.dailyLimit);
+        dailyLimitResults.textContent = "Your Recommended Daily Spend Limit Is "+gbp.format(state.dailyLimit);
         resultsArea.append(dailyLimitResults);
         //Set the working balance to the be the calculated daily limit allowed
         workingBalance = state.dailyLimit;
