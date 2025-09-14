@@ -224,7 +224,7 @@ function captureExpense()
    }
    else
    {
-      let id = expenses.length+1;
+      let id = state.expenses.length+1;
       let expenseItem = {id:id, name:description, value:expense}; 
       state.expenses.push(expenseItem);
       console.log("Number of expenses captured "+expenses.length);
