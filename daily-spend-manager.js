@@ -233,18 +233,6 @@ function captureExpense()
       updateBalance();
    }
    
-   //Grab all the entries - Temp commented out 
-   /*
-   let expense1 = parseFloat(document.getElementById("expense-1").value);
-   console.log("Expense 1 = "+expense1);
-   let expense2 = parseFloat(document.getElementById("expense-2").value);
-   console.log("Expense 2 = "+expense2);
-   let expense3 = parseFloat(document.getElementById("expense-3").value);
-   console.log("Expense 3 = "+expense3);
-   let expense4 = parseFloat(document.getElementById("expense-4").value);
-   console.log("Expense 4 = "+expense4);
-   let totalSpend = expense1 + expense2 + expense3 + expense4;
-   console.log("Total Spend = £"+totalSpend);*/
    
 }
 
@@ -283,6 +271,7 @@ function loadSavedBudget()
    }
    else
    {
+      document.getElementById("expense-capture").hidden = false;
       outputExpenses();
    }
 }
