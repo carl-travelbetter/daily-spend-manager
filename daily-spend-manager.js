@@ -104,7 +104,7 @@ function updateBalance()
       console.log("Last Items Purchased "+expenseItem.name);
    });
    workingBalance = workingBalance - totalSpend;
-   let remainingTotalBudget = totalBudget - totalSpend;
+   let remainingTotalBudget = state.budget - totalSpend;
    const workingBalanceReporting = document.getElementById("working-balance");
    workingBalanceReporting.innerHTML = "";
    const currentBalance = document.createElement("p");
