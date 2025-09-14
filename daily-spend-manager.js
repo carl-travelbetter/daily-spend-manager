@@ -1,5 +1,5 @@
 let workingBalance = 0;
-let dailyBudget = 0;
+//let dailyBudget = 0;
 //let expenses = [];
 let totalSpend = 0;
 //let totalBudget = 0;
@@ -11,10 +11,10 @@ const STORAGE_KEY = "tb_dailySpendData";
 
 //retrieve stored data
 //let expenses = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [] ;
-let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, endDate: null };
+let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, endDate: null };
 //let expenses = state.expenses;
-let totalBudget = state.budget;
-let tripEndDate = state.endDate;
+//let totalBudget = state.budget;
+//let tripEndDate = state.endDate;
 
 // Create a global function to convert a number to GBP (£) format
 const gbp = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' });
@@ -24,15 +24,15 @@ function simpleCalculation()
    console.log("Simple Calculation");
    let balance = parseInt(document.getElementById("simpleBudget").value);
    //Set the remaining total budget to the balance entered
-   totalBudget = balance;
-   console.log("Balance Entered "+balance);
+   state.budget = balance;
+   console.log("Balance Entered "+state.balance);
    //Get today's date
    const today = new Date();
    //Get the data entered by the user
    let selectedDate = document.getElementById("simpleEndDate").value;
-   const endDay = new Date(selectedDate); 
+   state.endDate = new Date(selectedDate); 
    //Calculate the days between the end date and today in milliseconds
-   const daysBetweenMilli = endDay - today;
+   const daysBetweenMilli = state.endDate - today;
    //Convert Milliseconds to days, set a min value of 1 and ensure a rounded day count
    let daysBetween = Math.max(1, Math.floor(daysBetweenMilli / (1000 * 3600 * 24)));
    console.log("Difference in Days = "+daysBetween);
@@ -43,18 +43,18 @@ function simpleCalculation()
     {
         //Set the new daily limit to total balance / number of days
         //dailyLimit = (balance / daysBetween).toFixed(2);
-        dailyLimit = balance / daysBetween;
-        console.log("Daily Cash Limit £"+ dailyLimit);
+        state.dailyLimit = state.balance / daysBetween;
+        console.log("Daily Cash Limit £"+ state.dailyLimit);
         const resultsArea = document.getElementById("results");
         resultsArea.innerHTML = "";
         resultsArea.className = "resultCard";
         const dailyLimitResults = document.createElement("p");
-        dailyLimitResults.textContent = "Your Daily Spend Limit Is "+gbp.format(dailyLimit);
+        dailyLimitResults.textContent = "Your Daily Spend Limit Is "+gbp.format(state.dailyLimit);
         resultsArea.append(dailyLimitResults);
         //Set the working balance to the be the calculated daily limit allowed
-        workingBalance = dailyLimit;
+        workingBalance = state.dailyLimit;
         //Set the global daily spend limit
-        dailyBudget = dailyLimit;
+        //dailyBudget = dailyLimit;
         document.getElementById("expense-capture").hidden = false;
         const workingBalanceContainer = document.getElementById("working-balance");
         const workingBalanceMessage = document.createElement("p");
@@ -94,7 +94,7 @@ function updateBalance()
 {
    console.log("Update Balance");
    //Reset the working balance
-   workingBalance = dailyBudget;
+   workingBalance = state.dailyBudget;
    //reset the total spend to zero
    totalSpend = 0;
    state.expenses.forEach(expenseItem => {
@@ -162,8 +162,7 @@ function outputExpenses()
       expenseItemAmount.className = "span-amount";
       expenseItemAmount.textContent = gbp.format(expenseItem.value);
       expenseListItem.appendChild(expenseItemAmount);
-      //expenseListItem.textContent = expenseNumber+" "+expenseItem.id+" "+expenseItem.name+" £"+expenseItem.value;
-      //create button and see what happens
+      //Create delete button
       const expenseDelete = document.createElement("span");
       expenseDelete.className = "span-delete";
       
@@ -176,7 +175,7 @@ function outputExpenses()
       
       console.log("Delete Expense Button Clicked");
       console.log("Delete ID = "+deleteExpenseButton.dataset.label);   
-      expenses.splice(deleteExpenseButton.dataset.label, 1); 
+      state.expenses.splice(deleteExpenseButton.dataset.label, 1); 
       updateBalance();
       });  
       
@@ -244,8 +243,11 @@ function resetDailySpendLimit()
 function clearExpenseGrid()
 {
    console.log("Clear Expense Grid");
-   expenses = [];
-   updateBalance();
+   state.expenses = [];
+   state.budget = 0;
+   state.dailyLimit = 0;
+   state.endDate = null;
+   startNewBudget();
 }
 
 function printExpenseGrid()
