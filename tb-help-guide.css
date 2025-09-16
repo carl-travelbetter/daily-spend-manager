@@ -161,3 +161,7 @@ li .span-delete {
 .help-topics h2 {
    text-align:center;
 }
+
+.help-topics a:link {
+   text-decoration: none;
+}
