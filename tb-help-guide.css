@@ -157,3 +157,7 @@ li .span-delete {
    margin-bottom:0.75rem;
    font-size:2.0rem;
 }
+
+.help-topics h2 {
+   text-align:center;
+}
