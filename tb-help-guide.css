@@ -50,7 +50,7 @@ h3, h4, h5 {
   background-color: #0066cc;
 }
 
-.topic-card {
+.help-topic-card {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0.75rem;
@@ -65,11 +65,11 @@ h3, h4, h5 {
   padding:10px;
 }
 
-.topic-card:hover {
+.help-topic-card:hover {
   transform: translateY(-3px);
 }
 
-.topic-card h2 {
+.help-topic-card h2 {
   margin-top: 0;
   color: #0170b9;
 }
