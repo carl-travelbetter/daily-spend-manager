@@ -149,3 +149,11 @@ li .span-delete {
   line-height: 20px;
   font-size: 0.5rem;
 }
+
+.help-icon {
+   margin-left:auto;
+   margin-right:auto;
+   margin-top:0.5rem;
+   margin-bottom:0.75rem;
+   font-size:2.0rem;
+}
