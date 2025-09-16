@@ -165,3 +165,7 @@ li .span-delete {
 .help-topics a:link {
    text-decoration: none;
 }
+
+.help-topics a:visited {
+   text-decoration: none;
+}
