@@ -31,6 +31,10 @@ h3, h4, h5 {
     margin-top: 1.25rem;
 }
 
+.introduction {
+   text-align:center;
+}
+
 .help-button {
   background-color: #004080;
   color: white;
