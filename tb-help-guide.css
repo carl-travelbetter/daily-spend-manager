@@ -173,3 +173,8 @@ li .span-delete {
 .help-topics a:visited {
    text-decoration: none;
 }
+
+.system-response {
+   color:hotpink;
+   font-style: oblique;
+}
