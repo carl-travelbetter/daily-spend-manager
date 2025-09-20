@@ -92,8 +92,8 @@ h3, h4, h5 {
 
 
 ul {
-  list-style: square;;
-  margin: 0;
+  list-style: square;
+  margin-left: 1em;
   padding: 0;
 }
 
