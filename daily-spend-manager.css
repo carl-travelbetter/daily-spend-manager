@@ -188,6 +188,8 @@ li .span-delete {
   text-align: center;
   line-height: 20px;
   font-size: 0.5rem;
+  width: 80%vw;
+  max-width:600px;
 }
 
 
