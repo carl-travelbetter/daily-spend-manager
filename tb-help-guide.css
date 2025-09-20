@@ -75,7 +75,13 @@ h3, h4, h5 {
 
 .help-topic-card h2 {
   margin-top: 0;
+  text-align: center; 
   color: #0170b9;
+}
+
+.help-topic-card p {
+   margin:0.25em;
+   padding:0;
 }
 
 .controlbar {
