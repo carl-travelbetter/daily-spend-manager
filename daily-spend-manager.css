@@ -31,6 +31,14 @@ h3, h4, h5 {
     margin-top: 1.25rem;
 }
 
+.intro {
+   text-align:center;
+}
+
+.into p {
+   font-size:1.25em;
+}
+
 .calcButton {
   background-color: #004080;
   color: white;
