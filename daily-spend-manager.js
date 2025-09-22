@@ -10,7 +10,7 @@ const STORAGE_KEY = "tb_dailySpendData";
 
 //retrieve stored data
 //let expenses = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [] ;
-let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, endDate: null };
+let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, startDate: null, endDate: null, duration: 0 };
 
 
 // Create a global function to convert a number to GBP (£) format
@@ -23,14 +23,19 @@ function simpleCalculation()
    console.log("Balance Set "+state.budget);
    //Get today's date
    const today = new Date();
-   //Get the data entered by the user
+   //Get the start date of the trip select by the user
+   let startDate = document.getElementById("simpleStartDate").value;
+   state.startDate = new Date(startDate);
+   
+   //Get the end date of the trip selected by the user
    let selectedDate = document.getElementById("simpleEndDate").value;
    state.endDate = new Date(selectedDate); 
    //Calculate the days between the end date and today in milliseconds
-   const daysBetweenMilli = state.endDate - today;
+   const daysBetweenMilli = state.endDate - state.startDate;
    //Convert Milliseconds to days, set a min value of 1 and ensure a rounded day count
    let daysBetween = Math.max(1, Math.floor(daysBetweenMilli / (1000 * 3600 * 24)));
    console.log("Difference in Days = "+daysBetween);
+   state.duration = daysBetween;
    //Create the daily spend limit variable and set to Zero               
    let dailyLimit = 0;
     
