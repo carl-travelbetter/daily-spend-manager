@@ -29,11 +29,14 @@ function simpleCalculation()
    
    //Get the end date of the trip selected by the user
    let selectedDate = document.getElementById("simpleEndDate").value;
+   console.log("Selected End Date = "+selectedDate);
    state.endDate = new Date(selectedDate); 
+   console.log("End Date = "+state.endDate);
    //Calculate the days between the end date and today in milliseconds
    const daysBetweenMilli = state.endDate - state.startDate;
    //Convert Milliseconds to days, set a min value of 1 and ensure a rounded day count
    let daysBetween = Math.max(1, Math.floor(daysBetweenMilli / (1000 * 3600 * 24)));
+   
    console.log("Difference in Days = "+daysBetween);
    state.duration = daysBetween;
    //Create the daily spend limit variable and set to Zero               
