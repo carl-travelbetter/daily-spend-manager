@@ -17,10 +17,10 @@ function loadFAQs()
   faqList.forEach(item => {
    let faqItem = document.createElement("div");
    faqItem.className = "help-topic-card";
-   let question = document.getElementById("h3");
+   let question = document.createElement("h3");
    question.textContent = item.question;
    faqItem.appendChild(question);
-   let answer = document.getElementById("p");
+   let answer = document.createElement("p");
    answer.textContent = item.answer;
    faqItem.appendChild(answer);
    faqDiv.appendChild(faqItem);
