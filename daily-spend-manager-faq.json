@@ -18,6 +18,10 @@
   {
     "question":"Can I access the budget on multiple devices?",
     "answer":"No, you can only access your current budget on the device and browser you started the budget on."
+  },
+  {
+    "question":"Can I create multiple budgets to track?",
+    "answer":"No, you can only create one budget at the time."
   }
 ]
   
