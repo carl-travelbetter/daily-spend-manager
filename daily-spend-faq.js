@@ -12,4 +12,17 @@ let faqList = [];
 function loadFAQs()
 {
   console.log("Load FAQs...");
+  const faqDiv = document.getElementById("faq-list");
+  faqDiv.innerHTML = "";
+  faqList.forEach(item => {
+   let faqItem = document.createElement("div");
+   faqItem.className = "help-topic-card";
+   let question = document.getElementById("h3");
+   question.textContent = item.question;
+   faqItem.appendChild(question);
+   let answer = document.getElementById("p");
+   answer.textContent = item.answer;
+   faqItem.appendChild(answer);
+   faqDiv.appendChild(faqItem);
+  });
 }
