@@ -17,12 +17,14 @@ function loadFAQs()
   faqList.forEach(item => {
    let faqItem = document.createElement("div");
    faqItem.className = "help-topic-card";
-   let question = document.createElement("h3");
+   let details = document.createElement("details");
+   let question = document.createElement("summary");
    question.textContent = item.question;
-   faqItem.appendChild(question);
+   details.add(question);
    let answer = document.createElement("p");
    answer.textContent = item.answer;
-   faqItem.appendChild(answer);
+   details.add(answer);
+   faqItem.appendChild(details);
    faqDiv.appendChild(faqItem);
   });
 }
