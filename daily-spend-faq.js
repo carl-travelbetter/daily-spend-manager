@@ -20,10 +20,10 @@ function loadFAQs()
    let details = document.createElement("details");
    let question = document.createElement("summary");
    question.textContent = item.question;
-   details.add(question);
+   details.appendChild(question);
    let answer = document.createElement("p");
    answer.textContent = item.answer;
-   details.add(answer);
+   details.appendChild(answer);
    faqItem.appendChild(details);
    faqDiv.appendChild(faqItem);
   });
