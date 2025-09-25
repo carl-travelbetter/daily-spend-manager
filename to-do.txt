@@ -13,3 +13,4 @@ Simple intructions on the landing page that links to more detailed ones.
 Create a walk through video or screen shot intructions
 Test the date it working and the calcs - looks high daily limit. 
 Add the daily budget to load data
+Navbar into help CSS
