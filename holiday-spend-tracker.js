@@ -113,7 +113,7 @@ function updateBalance()
    const remainingBudgetNote = document.createElement("p");
    
    
-      currentBalance.textContent = "Total Spent "+gbp.format(totalSpend);
+      currentBalance.textContent = "Total Spend "+gbp.format(totalSpend);
       currentBalance.className = "onbudget";
       remainingBudgetNote.textContent = "Remaining Budget "+gbp.format(remainingTotalBudget);
    
