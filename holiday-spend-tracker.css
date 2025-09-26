@@ -171,12 +171,12 @@ li .span-id {
 }
 
 li .span-name {
-  flex-basis: 60%;
+  flex-basis: 50%;
   text-align: left;
 }
 
 li .span-amount {
-  flex-basis: 15%;
+  flex-basis: 25%;
   text-align: left;
 }
 
