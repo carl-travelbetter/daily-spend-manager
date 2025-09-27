@@ -264,7 +264,7 @@ function startNewBudget()
 {
    console.log("Start New Budget");
    localStorage.removeItem(STORAGE_KEY);
-   state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, endDate: null };
+   state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, duration: 0 };
    document.getElementById("simpleapp").hidden = false;
    document.getElementById("expense-capture").hidden = true;
 }
