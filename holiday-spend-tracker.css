@@ -241,7 +241,7 @@ li .span-delete {
   margin-right: auto;
   margin-top:4px; 
   margin-bottom: 8px;
-  display: inline-block;
+  display: block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -261,7 +261,7 @@ li .span-delete {
   margin-right:auto;
   margin-top:4px; 
   margin-bottom: 8px;
-  display: inline-block;
+  display: block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
