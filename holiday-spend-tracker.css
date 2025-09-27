@@ -235,22 +235,36 @@ li .span-delete {
 }
 
 .input-budget {
-  width: 100%;
+  width: 50%;
   padding: 12px;
-  margin: 8px 0;
+  margin-left: auto;
+  margin-right: auto; 
+  margin-bottom: 8px;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  text-align:center; 
+}
+
+.input-budget:focus {
+  border: 3px solid #555;
 }
 
 .input-duration {
- width: 100%;
+ width: 50%;
   padding: 12px;
-  margin: 8px 0;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 8px;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  text-align:center; 
+}
+
+.input-budget:focus {
+  border: 3px solid #555;
 }
 
