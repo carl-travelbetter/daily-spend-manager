@@ -282,6 +282,12 @@ function loadSavedBudget()
    else
    {
       document.getElementById("expense-capture").hidden = false;
+      const resultsArea = document.getElementById("results");
+      resultsArea.innerHTML = "";
+      resultsArea.className = "resultCard";
+      const dailyLimitResults = document.createElement("p");
+      dailyLimitResults.textContent = "Your Recommended Daily Spend Limit Is "+gbp.format(state.dailyLimit);
+      resultsArea.append(dailyLimitResults);
       updateBalance();
    }
 }
