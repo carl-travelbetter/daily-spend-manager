@@ -112,7 +112,14 @@ tb-navbar ul li a:hover {
 }
 
 .help-topic-card li {
-   font-size:0.90em;
+   margin-right:5%;
+   margin-bottom:5%;
+}
+
+.help-topic-card h3 {
+   margin-top:0;
+   padding: 0;
+   text-align:center;
 }
 
 .controlbar {
