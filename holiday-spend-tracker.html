@@ -26,17 +26,14 @@
   </section>
   <section id="simpleapp" class="controlbar" hidden>
   <h2>Holiday Spend Tracker</h2>
-    <label for="simpleBudget">Budget £</label>
-    <input class="input-budget" type="number" id="simpleBudget" placeholder="1000" /><br><br><br>
+    <label for="simpleBudget">Budget <i>(your total spending budget for the trip)</i></label>
+    £<input class="input-budget" type="number" id="simpleBudget" placeholder="1000" /><br><br><br>
    <!-- <label for="simpleStartDate">Select Trip Start Date</label>
     <input type="date" id="simpleStartDate" class="date-field" /><br>
     <label for="simpleEndDate">Select Trip End Date</label>
     <input type="date" id="simpleEndDate" class="date-field" /><br> -->
-    <label for="duration">Number Of Days Away</label>
+    <label for="duration">Number Of Days Away <i>(Count each full day of your trip, including travel days.)</i></label>
     <input class="input-duration" type="number" id="duration" /><br>
-    <small id="trip-days-hint" class="input-hint">
-    Count each full day of your trip, including travel days.
-    </small>
     <button class="calcButton" onClick="simpleCalculation()">Calculate</button>  
   </section>
   <section id="resultsSection">
