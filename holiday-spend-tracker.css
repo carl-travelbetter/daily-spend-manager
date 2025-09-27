@@ -238,13 +238,16 @@ li .span-delete {
   width: 50%;
   padding: 12px;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
+  margin-top:4px; 
   margin-bottom: 8px;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   text-align:center; 
+  max-length:6;
+  size:10;  
 }
 
 .input-budget:focus {
@@ -256,12 +259,15 @@ li .span-delete {
   padding: 12px;
   margin-left:auto;
   margin-right:auto;
+  margin-top:4px; 
   margin-bottom: 8px;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  text-align:center; 
+  text-align:center;
+  max-length:3;
+  size:5; 
 }
 
 .input-budget:focus {
