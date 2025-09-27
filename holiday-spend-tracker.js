@@ -10,7 +10,7 @@ const STORAGE_KEY = "tb_dailySpendData";
 
 //retrieve stored data
 //let expenses = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [] ;
-let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, startDate: null, endDate: null, duration: 0 };
+let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, duration: 0 };
 
 
 // Create a global function to convert a number to GBP (£) format
@@ -22,7 +22,7 @@ function simpleCalculation()
    state.budget = parseInt(document.getElementById("simpleBudget").value);
    console.log("Balance Set "+state.budget);
    //Get today's date
-   const today = new Date();
+   /*const today = new Date();
    //Get the start date of the trip select by the user
    let startDate = document.getElementById("simpleStartDate").value;
    state.startDate = new Date(startDate);
@@ -35,18 +35,19 @@ function simpleCalculation()
    //Calculate the days between the end date and today in milliseconds
    const daysBetweenMilli = state.endDate - state.startDate;
    //Convert Milliseconds to days, set a min value of 1 and ensure a rounded day count
-   let daysBetween = Math.max(1, Math.floor(daysBetweenMilli / (1000 * 3600 * 24)));
+   let daysBetween = Math.max(1, Math.floor(daysBetweenMilli / (1000 * 3600 * 24)));*/
+   state.duration = parseInt(document.getElementById("duration").value);
    
-   console.log("Difference in Days = "+daysBetween);
-   state.duration = daysBetween;
+   console.log("Trip Duraction is... "+state.duration);
+   
    //Create the daily spend limit variable and set to Zero               
    let dailyLimit = 0;
     
-    if (daysBetween > 0)
+    if (state.duration > 0)
     {
         //Set the new daily limit to total balance / number of days
         //dailyLimit = (balance / daysBetween).toFixed(2);
-        state.dailyLimit = state.budget / daysBetween;
+        state.dailyLimit = state.budget / state.duration;
         console.log("Daily Cash Limit £"+ state.dailyLimit);
         const resultsArea = document.getElementById("results");
         resultsArea.innerHTML = "";
@@ -236,8 +237,7 @@ function resetDailySpendLimit()
 {
     console.log("Adjust Settings");
     document.getElementById("simpleBudget").value = state.budget;
-    document.getElementById("simpleStartDate").value = state.startDate;
-    document.getElementById("simpleEndDate").value = state.endDate;
+    document.getElementById("duration").value = state.duration;
     document.getElementById("simpleapp").hidden = false;
 }
 
