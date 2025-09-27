@@ -111,6 +111,10 @@ tb-navbar ul li a:hover {
    padding:0;
 }
 
+.help-topic-card li {
+   font-size:0.90em;
+}
+
 .controlbar {
     margin-left:auto;
     margin-right:auto;
