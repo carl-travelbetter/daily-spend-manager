@@ -226,4 +226,11 @@ li .span-delete {
    margin-bottom:2.5%;
 }
 
+/* Hint text */
+.input-hint {
+  font-size: 0.875rem; /* slightly smaller */
+  color: #555; /* muted but still readable */
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
 
