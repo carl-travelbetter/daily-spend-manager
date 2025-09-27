@@ -234,8 +234,10 @@ function captureExpense()
 
 function resetDailySpendLimit()
 {
+    console.log("Adjust Settings");
     document.getElementById("simpleBudget").value = state.budget;
     document.getElementById("simpleStartDate").value = state.startDate;
+    document.getElementById("simpleEndDate").value = state.endDate;
     document.getElementById("simpleapp").hidden = false;
 }
 
