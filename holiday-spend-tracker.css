@@ -236,7 +236,7 @@ li .span-delete {
 
 .input-budget {
   padding: 12px;
-  width:6ch; 
+  width:15ch; 
   margin-left: auto;
   margin-right: auto;
   margin-top:4px; 
@@ -256,7 +256,7 @@ li .span-delete {
 
 .input-duration {
   padding: 12px;
-  width:4ch; 
+  width:15ch; 
   margin-left:auto;
   margin-right:auto;
   margin-top:4px; 
@@ -272,5 +272,9 @@ li .span-delete {
 
 .input-budget:focus {
   border: 3px solid #555;
+}
+
+label {
+   display:block;
 }
 
