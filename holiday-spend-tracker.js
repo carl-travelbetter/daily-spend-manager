@@ -119,9 +119,7 @@ function updateBalance()
       currentBalance.textContent = "Total Spend "+gbp.format(totalSpend);
       currentBalance.className = "onbudget";
       remainingBudgetNote.textContent = "Remaining Budget "+gbp.format(remainingTotalBudget);
-   
-     
-   
+
    
    workingBalanceReporting.append(currentBalance);
    workingBalanceReporting.append(remainingBudgetNote);
@@ -241,6 +239,7 @@ function resetDailySpendLimit()
     document.getElementById("simpleBudget").value = state.budget;
     document.getElementById("duration").value = state.duration;
     document.getElementById("simpleapp").hidden = false;
+    document.getElementById("expense-capture").hidden = true;
 }
 
 function clearExpenseGrid()
