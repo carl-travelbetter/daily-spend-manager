@@ -9,7 +9,7 @@ simple - Is it worth having a modify option?
 Simple - add a print option
 Centralise the introduction paragraph
 Create Travel Spend style instructions on a stand alone page
-Simple intructions on the landing page that links to more detailed ones.
+Simple instructions on the landing page that links to more detailed ones.
 Create a walk through video or screen shot intructions
 Test the date it working and the calcs - looks high daily limit. 
 Add the daily budget to load data
