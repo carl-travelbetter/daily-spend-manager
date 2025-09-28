@@ -14,7 +14,8 @@ let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], bud
 
 
 // Create a global function to convert a number to GBP (£) format
-const gbp = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' });
+//const gbp = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' });
+let moneyFormatter;
 
 function simpleCalculation()
 {
@@ -42,6 +43,8 @@ function simpleCalculation()
    const currencySelect = document.getElementById("currency");
    let currency = currencySelect.value;
    console.log("Currency Choosen "+currency);
+   moneyFormatter = new Intl.NumberFormat('en-GB', { style: 'currency', currency: currency });
+
    
    //Create the daily spend limit variable and set to Zero               
    let dailyLimit = 0;
@@ -56,10 +59,10 @@ function simpleCalculation()
         settingsSummary.innerHTML = "";
         //settingsSummary.className = "resultCard";
         const settingsValues = document.createElement("p");
-        settingsValues.textContent = "You entered a budget of "+gbp.format(state.budget)+" and duration of "+state.duration+" days.";
+        settingsValues.textContent = "You entered a budget of "+moneyFormatter.format(state.budget)+" and duration of "+state.duration+" days.";
         settingsSummary.append(settingsValues);
         const dailyLimitResults = document.createElement("p");
-        dailyLimitResults.textContent = "Your Recommended Daily Spend Limit Is "+gbp.format(state.dailyLimit);
+        dailyLimitResults.textContent = "Your Recommended Daily Spend Limit Is "+moneyFormatter.format(state.dailyLimit);
         settingsSummary.append(dailyLimitResults);
         //Set the working balance to the be the calculated daily limit allowed
         workingBalance = state.dailyLimit;
@@ -67,7 +70,7 @@ function simpleCalculation()
         document.getElementById("expense-capture").hidden = false;
         const workingBalanceContainer = document.getElementById("working-balance");
         const workingBalanceMessage = document.createElement("p");
-        workingBalanceMessage.textContent = "Current Balance = "+gbp.format(workingBalance);
+        workingBalanceMessage.textContent = "Current Balance = "+moneyFormatter.format(workingBalance);
         workingBalanceContainer.append(workingBalanceMessage);
         document.getElementById("simpleapp").hidden = true;
         updateBalance();
@@ -109,7 +112,7 @@ function updateBalance()
    state.expenses.forEach(expenseItem => {
       console.log("Expense "+expenseItem.value);
       totalSpend = totalSpend+expenseItem.value;
-      console.log("Running Total "+gbp.format(totalSpend));
+      console.log("Running Total "+moneyFormatter.format(totalSpend));
       console.log("Last Items Purchased "+expenseItem.name);
    });
    workingBalance = workingBalance - totalSpend;
@@ -120,9 +123,9 @@ function updateBalance()
    const remainingBudgetNote = document.createElement("p");
    
    
-      currentBalance.textContent = "Total Spend "+gbp.format(totalSpend);
+      currentBalance.textContent = "Total Spend "+moneyFormatter.format(totalSpend);
       currentBalance.className = "onbudget";
-      remainingBudgetNote.textContent = "Remaining Budget "+gbp.format(remainingTotalBudget);
+      remainingBudgetNote.textContent = "Remaining Budget "+moneyFormatter.format(remainingTotalBudget);
 
    
    workingBalanceReporting.append(currentBalance);
@@ -162,7 +165,7 @@ function outputExpenses()
       expenseListItem.appendChild(expenseItemName);
       const expenseItemAmount = document.createElement("span");
       expenseItemAmount.className = "span-amount";
-      expenseItemAmount.textContent = gbp.format(expenseItem.value);
+      expenseItemAmount.textContent = moneyFormatter.format(expenseItem.value);
       expenseListItem.appendChild(expenseItemAmount);
       //Create delete button
       const expenseDelete = document.createElement("span");
