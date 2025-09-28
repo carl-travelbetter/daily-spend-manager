@@ -26,7 +26,7 @@ function simpleCalculation()
    state.duration = parseInt(document.getElementById("duration").value);
    if ((state.budget === 0) || (isNaN(state.budget)))
    {
-      alert("Budget must be greater than 0");
+      alert("Budget must have a value and be greater than 0");
       return;
    }
    
@@ -34,7 +34,7 @@ function simpleCalculation()
    console.log("Trip Duraction is... "+state.duration);
    if ((state.duration === 0) || (isNAN(state.duration)))
    {
-      alert("Duration must be greater than 0");
+      alert("Duration must have a value and be greater than 0");
       return;
    }
  
@@ -216,7 +216,7 @@ function captureExpense()
    console.log("Expense Captured £"+expense);
    if (isNaN(expense))
    {
-      console.log("Invalid Value Entered");
+      alert("Expense value must have a value and be greater than 0");
       return;
    }
    else
