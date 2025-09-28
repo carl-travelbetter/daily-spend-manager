@@ -24,8 +24,20 @@ function simpleCalculation()
    console.log("Balance Set "+state.budget);
    //Get the duration entered
    state.duration = parseInt(document.getElementById("duration").value);
+   if ((state.budget === 0) || (state.budget == null))
+   {
+      alert("Budget must be greater than 0");
+      return;
+   }
+   
    
    console.log("Trip Duraction is... "+state.duration);
+   if ((state.duration === 0) || (state.duration == null))
+   {
+      alert("Duration must be greater than 0");
+      return;
+   }
+ 
    
    //Create the daily spend limit variable and set to Zero               
    let dailyLimit = 0;
