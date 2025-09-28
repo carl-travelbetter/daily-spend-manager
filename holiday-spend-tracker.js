@@ -24,7 +24,7 @@ function simpleCalculation()
    console.log("Balance Set "+state.budget);
    //Get the duration entered
    state.duration = parseInt(document.getElementById("duration").value);
-   if ((state.budget === 0) || (state.budget == null))
+   if ((state.budget === 0) || (isNaN(state.budget)))
    {
       alert("Budget must be greater than 0");
       return;
@@ -32,7 +32,7 @@ function simpleCalculation()
    
    
    console.log("Trip Duraction is... "+state.duration);
-   if ((state.duration === 0) || (state.duration == null))
+   if ((state.duration === 0) || (isNAN(state.duration == null)))
    {
       alert("Duration must be greater than 0");
       return;
