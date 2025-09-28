@@ -10,7 +10,7 @@ const STORAGE_KEY = "tb_dailySpendData";
 
 //retrieve stored data
 //let expenses = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [] ;
-let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, duration: 0, currency: "GBP" };
+let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, duration: 0, currency: 'GBP' };
 
 
 // Create a global function to convert a number to GBP (£) format
