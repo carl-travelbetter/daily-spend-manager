@@ -19,23 +19,10 @@ const gbp = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' 
 function simpleCalculation()
 {
    console.log("Simple Calculation");
+   //Get the budget entered
    state.budget = parseInt(document.getElementById("simpleBudget").value);
    console.log("Balance Set "+state.budget);
-   //Get today's date
-   /*const today = new Date();
-   //Get the start date of the trip select by the user
-   let startDate = document.getElementById("simpleStartDate").value;
-   state.startDate = new Date(startDate);
-   
-   //Get the end date of the trip selected by the user
-   let selectedDate = document.getElementById("simpleEndDate").value;
-   console.log("Selected End Date = "+selectedDate);
-   state.endDate = new Date(selectedDate); 
-   console.log("End Date = "+state.endDate);
-   //Calculate the days between the end date and today in milliseconds
-   const daysBetweenMilli = state.endDate - state.startDate;
-   //Convert Milliseconds to days, set a min value of 1 and ensure a rounded day count
-   let daysBetween = Math.max(1, Math.floor(daysBetweenMilli / (1000 * 3600 * 24)));*/
+   //Get the duration entered
    state.duration = parseInt(document.getElementById("duration").value);
    
    console.log("Trip Duraction is... "+state.duration);
@@ -49,12 +36,15 @@ function simpleCalculation()
         //dailyLimit = (balance / daysBetween).toFixed(2);
         state.dailyLimit = state.budget / state.duration;
         console.log("Daily Cash Limit £"+ state.dailyLimit);
-        const resultsArea = document.getElementById("results");
-        resultsArea.innerHTML = "";
-        resultsArea.className = "resultCard";
+        const settingsSummary = document.getElementById("settings-summary");
+        settingsSummary.innerHTML = "";
+        //settingsSummary.className = "resultCard";
+        const settingValues = document.createElement("p");
+        settingValues.textContent = "You entered a budget of "+gbp.format(state.budget)+" and duration of "+state.duration+" days.";
+        settingSummary.append(settingsValues);
         const dailyLimitResults = document.createElement("p");
         dailyLimitResults.textContent = "Your Recommended Daily Spend Limit Is "+gbp.format(state.dailyLimit);
-        resultsArea.append(dailyLimitResults);
+        settingsSummary.append(dailyLimitResults);
         //Set the working balance to the be the calculated daily limit allowed
         workingBalance = state.dailyLimit;
         //Enable expense capture
