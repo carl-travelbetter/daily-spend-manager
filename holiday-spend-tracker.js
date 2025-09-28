@@ -10,12 +10,12 @@ const STORAGE_KEY = "tb_dailySpendData";
 
 //retrieve stored data
 //let expenses = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [] ;
-let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, duration: 0 };
+let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, duration: 0, currency: "GBP" };
 
 
 // Create a global function to convert a number to GBP (£) format
 //const gbp = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' });
-let moneyFormatter;
+let moneyFormatter = new Intl.NumberFormat('en-GB', { style: 'currency', currency: state.currency });
 
 function simpleCalculation()
 {
@@ -43,6 +43,7 @@ function simpleCalculation()
    const currencySelect = document.getElementById("currency");
    let currency = currencySelect.value;
    console.log("Currency Choosen "+currency);
+   state.currency = currency;
    moneyFormatter = new Intl.NumberFormat('en-GB', { style: 'currency', currency: currency });
 
    
