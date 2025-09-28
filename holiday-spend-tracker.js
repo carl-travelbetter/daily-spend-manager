@@ -52,8 +52,8 @@ function simpleCalculation()
         settingsSummary.innerHTML = "";
         //settingsSummary.className = "resultCard";
         const settingValues = document.createElement("p");
-        settingValues.textContent = "You entered a budget of "+gbp.format(state.budget)+" and duration of "+state.duration+" days.";
-        settingSummary.append(settingsValues);
+        settingsValues.textContent = "You entered a budget of "+gbp.format(state.budget)+" and duration of "+state.duration+" days.";
+        settingsSummary.append(settingsValues);
         const dailyLimitResults = document.createElement("p");
         dailyLimitResults.textContent = "Your Recommended Daily Spend Limit Is "+gbp.format(state.dailyLimit);
         settingsSummary.append(dailyLimitResults);
