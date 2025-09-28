@@ -32,7 +32,7 @@ function simpleCalculation()
    
    
    console.log("Trip Duraction is... "+state.duration);
-   if ((state.duration === 0) || (isNAN(state.duration == null)))
+   if ((state.duration === 0) || (isNAN(state.duration)))
    {
       alert("Duration must be greater than 0");
       return;
