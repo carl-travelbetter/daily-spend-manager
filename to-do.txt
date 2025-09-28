@@ -13,4 +13,5 @@ Simple intructions on the landing page that links to more detailed ones.
 Create a walk through video or screen shot intructions
 Test the date it working and the calcs - looks high daily limit. 
 Add the daily budget to load data
-Help guide paragraphs to ordered lists with a slightly smaller font e.g 0.8em
+Change of focus on adjust settings
+Add a budget / settings reminder block.
