@@ -51,7 +51,7 @@ function simpleCalculation()
         const settingsSummary = document.getElementById("settings-summary");
         settingsSummary.innerHTML = "";
         //settingsSummary.className = "resultCard";
-        const settingValues = document.createElement("p");
+        const settingsValues = document.createElement("p");
         settingsValues.textContent = "You entered a budget of "+gbp.format(state.budget)+" and duration of "+state.duration+" days.";
         settingsSummary.append(settingsValues);
         const dailyLimitResults = document.createElement("p");
