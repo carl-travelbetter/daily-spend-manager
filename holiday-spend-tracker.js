@@ -291,12 +291,17 @@ function loadSavedBudget()
    else
    {
       document.getElementById("expense-capture").hidden = false;
-      const resultsArea = document.getElementById("results");
-      resultsArea.innerHTML = "";
-      resultsArea.className = "resultCard";
-      const dailyLimitResults = document.createElement("p");
-      dailyLimitResults.textContent = "Your Recommended Daily Spend Limit Is "+moneyFormatter.format(state.dailyLimit);
-      resultsArea.append(dailyLimitResults);
+       const settingsSummary = document.getElementById("settings-summary");
+        settingsSummary.innerHTML = "";
+        //settingsSummary.className = "resultCard";
+        const settingsValues = document.createElement("p");
+        settingsValues.textContent = "You entered a budget of "+moneyFormatter.format(state.budget)+" and duration of "+state.duration+" days.";
+        settingsSummary.append(settingsValues);
+        const dailyLimitResults = document.createElement("p");
+        dailyLimitResults.textContent = "Your Recommended Daily Spend Limit Is "+moneyFormatter.format(state.dailyLimit);
+        settingsSummary.append(dailyLimitResults);
+        //Set the working balance to the be the calculated daily limit allowed
+        
       updateBalance();
    }
 }
