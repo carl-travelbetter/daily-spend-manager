@@ -294,7 +294,7 @@ function loadSavedBudget()
       resultsArea.innerHTML = "";
       resultsArea.className = "resultCard";
       const dailyLimitResults = document.createElement("p");
-      dailyLimitResults.textContent = "Your Recommended Daily Spend Limit Is "+gbp.format(state.dailyLimit);
+      dailyLimitResults.textContent = "Your Recommended Daily Spend Limit Is "+moneyFormatter.format(state.dailyLimit);
       resultsArea.append(dailyLimitResults);
       updateBalance();
    }
