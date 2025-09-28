@@ -37,7 +37,11 @@ function simpleCalculation()
       alert("Duration must have a value and be greater than 0");
       return;
    }
- 
+
+   //Get the currency choice
+   const currencySelect = document.getElementById("currency");
+   let currency = currencySelect.value;
+   console.log("Currency Choosen "+currency);
    
    //Create the daily spend limit variable and set to Zero               
    let dailyLimit = 0;
