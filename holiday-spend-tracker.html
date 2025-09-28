@@ -27,14 +27,14 @@
   </section>
   <section id="simpleapp" class="controlbar" hidden>
   <h2>Holiday Spend Tracker</h2>
-    <label for="simpleBudget">Spending Budget</i></label>
-    <select id="currency" name="currency">
+    <label for="simpleBudget">Enter Spending Budget</i></label>
+    <select id="currency" name="currency" class="currency-choice">
         <option value="GBP" selected>GBP (£)</option>
         <option value="USD">USD ($)</option>
         <option value="EUR">EUR (€)</option>
     </select>
     <input class="input-budget" type="number" id="simpleBudget" /><br><br><br>
-    <label for="duration">Number Of Days Away <i>(Count each full day of your trip, including travel days.)</i></label>
+    <label for="duration">Enter Number Of Days Away <i>(Count each full day of your trip, including travel days.)</i></label>
     <input class="input-duration" type="number" id="duration" /><br>
     <button class="calcButton" onClick="simpleCalculation()">Calculate</button>
   </section>
