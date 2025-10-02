@@ -256,7 +256,9 @@ function clearExpenseGrid()
    //Open a dialog with confirmation and Cancel / Clear options
    if (confirm("Clear all data - This can't be undone!"))
    {
-      startNewBudget();
+      //startNewBudget();
+      state.expenses = [];
+      outputExpenses();
    }
    else
    {
