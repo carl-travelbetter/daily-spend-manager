@@ -13,3 +13,4 @@ Simple instructions on the landing page that links to more detailed ones.
 Create a walk through video or screen shot intructions
 Deploy and review
 Update help for duration
+Alert warning on start new budget
