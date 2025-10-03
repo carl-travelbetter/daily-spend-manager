@@ -11,6 +11,4 @@ Centralise the introduction paragraph
 Create Travel Spend style instructions on a stand alone page
 Simple instructions on the landing page that links to more detailed ones.
 Create a walk through video or screen shot intructions
-Deploy and review
-Update help for duration
-Alert warning on start new budget
+Fix image margins, padding and size. Also consider lazy loading.
