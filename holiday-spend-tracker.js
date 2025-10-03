@@ -273,11 +273,31 @@ function printExpenseGrid()
 
 function startNewBudget()
 {
-   console.log("Start New Budget");
-   localStorage.removeItem(STORAGE_KEY);
-   state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, duration: 0 };
-   document.getElementById("simpleapp").hidden = false;
-   document.getElementById("expense-capture").hidden = true;
+   if (state.expenses.lengh > 0)
+   {
+      if (confirm("Start New Budget and Clear All Data - This can't be undone!"))
+      {
+         console.log("Start New Budget and clear data");
+         localStorage.removeItem(STORAGE_KEY);
+         state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, duration: 0 };
+         document.getElementById("simpleBudget").textContent = "";
+         document.getElementById("duration").textContent = "";
+         document.getElementById("simpleapp").hidden = false;
+         document.getElementById("expense-capture").hidden = true;
+      }
+      else
+      {
+         return;
+      }
+   }
+   else
+   {
+      console.log("Start New Budget - no previous data");
+      localStorage.removeItem(STORAGE_KEY);
+      state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { expenses: [], budget: 0, dailyLimit: 0, duration: 0 };
+      document.getElementById("simpleapp").hidden = false;
+      document.getElementById("expense-capture").hidden = true;
+   }
 }
 
 function loadSavedBudget()
