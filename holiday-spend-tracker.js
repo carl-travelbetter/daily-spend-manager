@@ -194,15 +194,8 @@ function outputExpenses()
 
   //clear the input fields
    document.getElementById("item-description").value = "";
-   document.getElementById("expense").value = "";
-
-   
-    if (expenseSummary) {
-        expenseSummary.scrollIntoView({
-            behavior: "smooth", // smooth scrolling
-            block: "start"      // align to top
-        });
-    }
+   document.getElementById("expense").value = "";  
+   scrollToExpenses();
    
 }
 
@@ -331,5 +324,15 @@ function loadSavedBudget()
 function saveState() {
   console.log("Saving Budget and Spend Data...");
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function scrollToExpenses() {
+    const resultsContainer = document.getElementById("capture-expense");
+    if (resultsContainer) {
+        resultsContainer.scrollIntoView({
+            behavior: "smooth", // smooth scrolling
+            block: "start"      // align to top
+        });
+    }
 }
 
